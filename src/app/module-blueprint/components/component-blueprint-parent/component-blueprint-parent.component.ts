@@ -22,21 +22,21 @@ import { AuthenticationService } from '../../services/authentification-service';
 import { ComponentSideBuildToolComponent } from '../side-bar/build-tool/build-tool.component';
 import { DialogAboutComponent } from '../dialogs/dialog-about/dialog-about.component';
 import { ComponentSideSelectionToolComponent } from '../side-bar/selection-tool/selection-tool.component';
-
+import {GameCodeService} from '../../services/game-string-service'
 /*
 TODO Feature List before release :
 
  * Filter author on browse
  * Toast on blueprint error, nb item skipped
  * save camera offset and zoom on save + shared code on save
- * 
- 
+ *
+
  Less important stuff :
  * Unify returns in backend
  * dragBuild is not used
  * build drag on move with keyboard
- * 
- * 
+ *
+ *
 
 */
 
@@ -54,7 +54,7 @@ export class ComponentBlueprintParentComponent implements OnInit, IObsBlueprintC
 
   @ViewChild('buildTool', {static: false})
   buildTool: ComponentSideBuildToolComponent;
-  
+
   @ViewChild('saveDialog', {static: false})
   saveDialog: ComponentSaveDialogComponent;
 
@@ -81,12 +81,14 @@ export class ComponentBlueprintParentComponent implements OnInit, IObsBlueprintC
   selectionTool: ComponentSideSelectionToolComponent;
 
   constructor(
-    private messageService: MessageService, 
+    private messageService: MessageService,
     private route: ActivatedRoute,
     private authService: AuthenticationService,
     private blueprintService: BlueprintService,
     public toolService: ToolService,
-    private renderer: Renderer2) { 
+    private renderer: Renderer2,
+    public gameCodeService: GameCodeService
+    ) {
   }
 
   get showElementReport() {
@@ -113,7 +115,7 @@ export class ComponentBlueprintParentComponent implements OnInit, IObsBlueprintC
       }
       else this.forceSize = false;
     });
-    
+
     SpriteModifier.init();
     OniItem.init();
     ImageSource.init();
@@ -125,7 +127,7 @@ export class ComponentBlueprintParentComponent implements OnInit, IObsBlueprintC
     this.blueprintService.subscribeBlueprintChanged(this);
 
     this.fetchDatabase().then(() => {
-      
+
       if (!this.forceSize) {
         this.buildTool.oniItemsLoaded();
       }
@@ -147,7 +149,7 @@ export class ComponentBlueprintParentComponent implements OnInit, IObsBlueprintC
       });
     })/*
     .catch((error) => {
-      this.messageService.add({severity:'error', summary:'Error loading database' , detail:error, sticky:true});   
+      this.messageService.add({severity:'error', summary:'Error loading database' , detail:error, sticky:true});
     });*/
 
     this.renderer.listen('window', 'load', () => {
@@ -174,48 +176,58 @@ export class ComponentBlueprintParentComponent implements OnInit, IObsBlueprintC
   {
     let promise = new Promise((resolve, reject) => {
 
-    
-    // Start comment here 
+
+    // Start comment here
     JSZipUtils.getBinaryContent('/assets/database/database.zip', (err, data) => {
       if(err) { throw err; }
-  
+
       JSZip.loadAsync(data).then((zipped) => {
-        zipped.files['database.json'].async('text').then((text) => {
+        zipped.files['database.json'].async('text').then(async (text) => {
           let json = JSON.parse(text);
 
           this.database = json;
 
           let elements: BuildableElement[] = json.elements;
+          for (const e of elements) {
+            const localizedName = await this.gameCodeService.getStr(`STRINGS.ELEMENTS.${e.id.toUpperCase()}.NAME`);
+            if (!localizedName) console.warn(`Can not translate element`, e);
+            e.name = localizedName || e.name
+          }
           BuildableElement.load(elements);
-  
+
           let buildMenuCategories: BuildMenuCategory[] = json.buildMenuCategories;
           BuildMenuCategory.load(buildMenuCategories);
-  
+
           let buildMenuItems: BuildMenuItem[] = json.buildMenuItems;
           BuildMenuItem.load(buildMenuItems);
-  
+
           let uiSprites: BSpriteInfo[] = json.uiSprites;
           SpriteInfo.load(uiSprites)
-  
+
           let spriteModifiers: BSpriteModifier[] = json.spriteModifiers;
           SpriteModifier.load(spriteModifiers);
-          
+
           let buildings: BBuilding[] = json.buildings;
+          for (const b of buildings) {
+            const localizedName = await this.gameCodeService.getStr(`STRINGS.BUILDINGS.PREFABS.${b.prefabId.toUpperCase()}.NAME`);
+            if (!localizedName) console.warn(`Can not translate building`, b);
+            b.name = localizedName
+          }
           OniItem.load(buildings);
-  
+
           resolve(0);
         })
-        
+
       })
       .catch((error) => {
         reject(error);
       });
     });
-    // End comment here 
-    
+    // End comment here
+
 
     /*
-    // Start comment here 
+    // Start comment here
     fetch("/assets/database/database.json")
       .then(response => { return response.json(); })
       .then(json => {
@@ -236,7 +248,7 @@ export class ComponentBlueprintParentComponent implements OnInit, IObsBlueprintC
 
         let spriteModifiers: BSpriteModifier[] = json.spriteModifiers;
         SpriteModifier.load(spriteModifiers);
-        
+
         let buildings: BBuilding[] = json.buildings;
         OniItem.load(buildings);
 
@@ -245,7 +257,7 @@ export class ComponentBlueprintParentComponent implements OnInit, IObsBlueprintC
     .catch((error) => {
       reject(error);
     });
-    // End comment here 
+    // End comment here
     */
 
     });
@@ -271,7 +283,7 @@ export class ComponentBlueprintParentComponent implements OnInit, IObsBlueprintC
     else if (menuCommand.type == MenuCommandType.downloadUtility) this.canvas.downloadUtility(this.database);
     else if (menuCommand.type == MenuCommandType.repackTextures) this.canvas.repackTextures(this.database);
     else if (menuCommand.type == MenuCommandType.addElementsTiles) this.addElementsTiles();
-    
+
   }
 
   saveImages(exportOptions: ExportImageOptions) {
@@ -306,9 +318,9 @@ export class ComponentBlueprintParentComponent implements OnInit, IObsBlueprintC
     else {
       let friendlyname = "new blueprint";
       if (this.blueprintService.name != undefined) friendlyname = this.blueprintService.name;
-      
+
       let bniBlueprint = this.blueprintService.blueprint.toBniBlueprint(friendlyname);
-      
+
       let a = document.createElement('a');
       document.body.append(a);
       a.download = sanitize(friendlyname) + '.blueprint';

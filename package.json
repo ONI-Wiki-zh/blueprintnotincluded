@@ -26,6 +26,7 @@
     "@angular/router": "^13.1.1",
     "@fortawesome/fontawesome-free": "^5.14.0",
     "csharp-binary-stream": "^1.0.2",
+    "gettext-parser": "^4.2.0",
     "jszip": "^3.5.0",
     "jszip-utils": "^0.1.0",
     "ng-recaptcha": "^9.0.0",
@@ -36,6 +37,7 @@
     "rxjs": "^7.4.0",
     "sanitize-filename": "^1.6.3",
     "stream": "0.0.2",
+    "util": "^0.12.4",
     "zone.js": "~0.11.4"
   },
   "devDependencies": {
@@ -43,6 +45,7 @@
     "@angular/cli": "^13.1.1",
     "@angular/compiler-cli": "^13.1.1",
     "@angular/language-service": "^13.1.1",
+    "@types/gettext-parser": "^4.0.1",
     "@types/jasmine": "^3.10.2",
     "@types/jasminewd2": "~2.0.3",
     "@types/node": "^17.0.0",

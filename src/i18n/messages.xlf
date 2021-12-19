@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+  <file source-language="en-US" datatype="plaintext" original="ng2.template">
+    <body>
+      <trans-unit id="4341675379036538127" datatype="html">
+        <source>Blueprint</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/module-blueprint/components/component-menu/component-menu.component.ts</context>
+          <context context-type="linenumber">87</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="945b52f918f7c6ecc060e94b857f6531c6eb2a97" datatype="html">
+        <source>Build Tool</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/module-blueprint/components/side-bar/build-tool/build-tool.component.html</context>
+          <context context-type="linenumber">2</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="7b64fb2a01dadbd0149aa506ee444a759765f57a" datatype="html">
+        <source>Press &quot;O&quot; to change item orientation</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/module-blueprint/components/side-bar/build-tool/build-tool.component.html</context>
+          <context context-type="linenumber">18</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="f683b93410054f99f9147dd69059403b57f08603" datatype="html">
+        <source>Select Tool</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/module-blueprint/components/side-bar/selection-tool/selection-tool.component.html</context>
+          <context context-type="linenumber">2</context>
+        </context-group>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

@@ -30,11 +30,11 @@ export class ComponentMenuComponent implements OnInit, IObsToolChanged, IObsCame
 
   constructor(
     //TODO should not be public
-    public authService: AuthenticationService, 
+    public authService: AuthenticationService,
     private messageService: MessageService,
     private toolService: ToolService,
     private blueprintService: BlueprintService,
-    private router: Router) 
+    private router: Router)
   {
     this.toolService.subscribeToolChanged(this);
     this.cameraService = CameraService.cameraService;
@@ -44,14 +44,14 @@ export class ComponentMenuComponent implements OnInit, IObsToolChanged, IObsCame
 
 
   // TODO this causes errors
-  get dynamicMenuItems() { 
+  get dynamicMenuItems() {
     let blueprintMenuItems = this.menuItems.find((i) => i.id == 'blueprint').items as MenuItem[];
     blueprintMenuItems.find((i) => i.id == 'save').disabled = !this.authService.isLoggedIn();
-    return this.menuItems; 
+    return this.menuItems;
   }
 
   ngOnInit() {
-    
+
     let overlayList: Overlay[] = [
       Overlay.Base,
       Overlay.Power,
@@ -84,10 +84,10 @@ export class ComponentMenuComponent implements OnInit, IObsToolChanged, IObsCame
     this.menuItems = [
       {
         id: 'blueprint',
-        label: 'Blueprint',
+        label: $localize`Blueprint`,
         items: [
-          {label: 'New', icon:'pi pi-plus', command: (event) => { this.onMenuCommand.emit({type: MenuCommandType.newBlueprint, data: null}); } },
-          {id: 'save', label: 'Save', icon:'pi pi-save', command: (event) => { this.onMenuCommand.emit({type: MenuCommandType.saveBlueprint, data: null}); } },
+          {label: $localize`New`, icon:'pi pi-plus', command: (event) => { this.onMenuCommand.emit({type: MenuCommandType.newBlueprint, data: null}); } },
+          {id: 'save', label: $localize`Save`, icon:'pi pi-save', command: (event) => { this.onMenuCommand.emit({type: MenuCommandType.saveBlueprint, data: null}); } },
           {label: 'Upload', icon:'pi pi-upload', items:[
             {label: 'Game (yaml)', command: (event) => { this.uploadYamlTemplate(); } },
             {label: 'Blueprint (json)', command: (event) => { this.uploadJsonTemplate(); } },
@@ -142,11 +142,11 @@ export class ComponentMenuComponent implements OnInit, IObsToolChanged, IObsCame
           }
         ]
       }
-      
-      /* 
+
+      /*
       // This is done on the node backend now
       ,{
-        label: 'Technical', 
+        label: 'Technical',
         items: [
           {label: 'Fetch images',          icon:'pi pi-download', command: (event) => { this.onMenuCommand.emit({type: MenuCommandType.fetchIcons, data:null}); } },
           {label: 'Add element tiles',     icon:'pi pi-download', command: (event) => { this.onMenuCommand.emit({type: MenuCommandType.addElementsTiles, data:null}); } },
@@ -157,10 +157,10 @@ export class ComponentMenuComponent implements OnInit, IObsToolChanged, IObsCame
         ]
       }
       */
-      
+
     ];
-   
-    
+
+
     this.clickOverlay({item:{id:Overlay.Base}});
     this.clickDisplay({item:{id:Display.solid}});
     this.clickVisualization({item:{id:Visualization.none}});
@@ -180,21 +180,21 @@ export class ComponentMenuComponent implements OnInit, IObsToolChanged, IObsCame
         if (this.toolService.getTool(ToolType[menuItem.id]).visible) menuItem.icon = 'pi pi-fw pi-check';
         else menuItem.icon = 'pi pi-fw pi-none';
       }
-    }   
+    }
   }
 
   clickTool(toolType: ToolType)
   {
     this.toolService.changeTool(toolType);
   }
-  
+
   userProfile() {
     let userFilter: BrowseData = {
       filterUserId: this.authService.getUserDetails()._id,
       filterUserName: this.authService.getUserDetails().username,
       getDuplicates: true
     }
-    
+
     this.onMenuCommand.emit({type: MenuCommandType.browseBlueprints, data: userFilter});
   }
 
@@ -322,7 +322,7 @@ export enum MenuCommandType
   showLoginDialog
 }
 
-export class MenuCommand 
+export class MenuCommand
 {
   type: MenuCommandType;
   data: any;

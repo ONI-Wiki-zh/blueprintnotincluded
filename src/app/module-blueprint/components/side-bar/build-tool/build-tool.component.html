@@ -1,5 +1,5 @@
 <div #selectToolCard class="box-card ui-widget">
-  <div class="box-card-title">Build Tool</div>
+  <div class="box-card-title" i18n>Build Tool</div>
   <div *ngIf="databaseLoaded">
     <div class="ui-clickable-icon element-button-width" (click)="showCategories($event)" style="margin-bottom: 5px;">
       <div class="building-panel-content">
@@ -15,10 +15,10 @@
       </div>
     </div>
 
-    <div *ngIf="currentItem.orientations.length > 1" >Press "O" to change item orientation</div>
+    <div i18n *ngIf="currentItem.orientations.length > 1">Press "O" to change item orientation</div>
     <div *ngIf="!currentItemToBuild.buildCandidateResult.canBuild" class = "error-red">{{currentItemToBuild.buildCandidateResult.cantBuildReason}}</div>
-    
-    <app-buildable-element-picker 
+
+    <app-buildable-element-picker
       *ngIf="!currentItem.isInfo"
       [currentElement]="currentItemToBuild.buildableElements"
       [buildableElementsArray]="currentItem.buildableElementsArray"
@@ -41,7 +41,7 @@
       <app-info-input [blueprintIteminfo]="currentItemToBuild">
       </app-info-input>
     </div>
-    
+
     <!-- These go first so we don't have to add one to the index when querying them -->
     <p-overlayPanel [appendTo]="'body'" *ngFor="let buildMenuCategory of buildMenuCategories; let indexCategory = index">
       <div *ngFor="let itemArray of items[indexCategory]" class="building-panel-content">
@@ -50,9 +50,9 @@
         </div>
       </div>
     </p-overlayPanel>
-    
 
-  
+
+
 
   </div>
 </div>

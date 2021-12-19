@@ -4,11 +4,13 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
+    "start:zh-Hans": "ng serve --configuration=zh-Hans",
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "compodoc": "npx compodoc -p tsconfig.app.json"
+    "compodoc": "npx compodoc -p tsconfig.app.json",
+    "extract-i18n": "ng extract-i18n --output-path src/i18n && xliffmerge --profile xliffmerge.json"
   },
   "private": true,
   "dependencies": {
@@ -52,6 +54,7 @@
     "karma-coverage-istanbul-reporter": "^3.0.3",
     "karma-jasmine": "^4.0.1",
     "karma-jasmine-html-reporter": "^1.7.0",
+    "ngx-i18nsupport": "^0.17.1",
     "protractor": "~7.0.0",
     "ts-node": "^10.4.0",
     "tslint": "~6.1.0",

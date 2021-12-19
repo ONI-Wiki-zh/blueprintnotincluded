@@ -35,7 +35,6 @@
     "rxjs": "~6.6.2",
     "sanitize-filename": "^1.6.3",
     "stream": "0.0.2",
-    "tslib": "^2.0.0",
     "zone.js": "~0.10.2"
   },
   "devDependencies": {

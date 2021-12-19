@@ -27,7 +27,7 @@
     "jszip": "^3.5.0",
     "jszip-utils": "^0.1.0",
     "ng-recaptcha": "^9.0.0",
-    "pixi.js-legacy": "^6.2.0",
+    "pixi.js-legacy": "^5.3.3",
     "primeflex": "^3.1.2",
     "primeicons": "^5.0.0",
     "primeng": "^13.0.2",

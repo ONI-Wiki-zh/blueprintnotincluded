@@ -15,7 +15,7 @@
       </div>
     </div>
 
-    <div i18n *ngIf="currentItem.orientations.length > 1">Press "O" to change item orientation</div>
+    <div *ngIf="currentItem.orientations.length > 1" i18n>Press "O" to change item orientation</div>
     <div *ngIf="!currentItemToBuild.buildCandidateResult.canBuild" class = "error-red">{{currentItemToBuild.buildCandidateResult.cantBuildReason}}</div>
 
     <app-buildable-element-picker

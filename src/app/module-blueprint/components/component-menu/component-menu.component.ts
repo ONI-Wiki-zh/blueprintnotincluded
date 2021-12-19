@@ -67,18 +67,18 @@ export class ComponentMenuComponent implements OnInit, IObsToolChanged, IObsCame
     });
 
     this.displayMenuItems = [];
-    this.displayMenuItems.push({label:"Blueprint",  id:Display.blueprint.toString(),  command: (event) => { this.clickDisplay(event); }});
-    this.displayMenuItems.push({label:"Color",      id:Display.solid.toString(),      command: (event) => { this.clickDisplay(event); }});
+    this.displayMenuItems.push({label: $localize`Blueprint`,  id:Display.blueprint.toString(),  command: (event) => { this.clickDisplay(event); }});
+    this.displayMenuItems.push({label: $localize`Color`,      id:Display.solid.toString(),      command: (event) => { this.clickDisplay(event); }});
 
     this.visualizationMenuItems = [];
-    this.visualizationMenuItems.push({label:"None",         id:Visualization.none.toString(),         command: (event) => { this.clickVisualization(event); }});
-    this.visualizationMenuItems.push({label:"Temperature",  id:Visualization.temperature.toString(),  command: (event) => { this.clickVisualization(event); }});
-    this.visualizationMenuItems.push({label:"Elements",     id:Visualization.elements.toString(),     command: (event) => { this.clickVisualization(event); }});
+    this.visualizationMenuItems.push({label: $localize`None`,         id:Visualization.none.toString(),         command: (event) => { this.clickVisualization(event); }});
+    this.visualizationMenuItems.push({label: $localize`Temperature`,  id:Visualization.temperature.toString(),  command: (event) => { this.clickVisualization(event); }});
+    this.visualizationMenuItems.push({label: $localize`Elements`,     id:Visualization.elements.toString(),     command: (event) => { this.clickVisualization(event); }});
 
 
     this.toolMenuItems = [
-      {label: 'Select',         id:ToolType[ToolType.select],        command: (event) => { this.clickTool(ToolType.select); }},
-      {label: 'Build',          id:ToolType[ToolType.build],         command: (event) => { this.clickTool(ToolType.build); }},
+      {label: $localize`Select`,         id:ToolType[ToolType.select],        command: (event) => { this.clickTool(ToolType.select); }},
+      {label: $localize`Build`,          id:ToolType[ToolType.build],         command: (event) => { this.clickTool(ToolType.build); }},
     ];
 
     this.menuItems = [
@@ -88,56 +88,56 @@ export class ComponentMenuComponent implements OnInit, IObsToolChanged, IObsCame
         items: [
           {label: $localize`New`, icon:'pi pi-plus', command: (event) => { this.onMenuCommand.emit({type: MenuCommandType.newBlueprint, data: null}); } },
           {id: 'save', label: $localize`Save`, icon:'pi pi-save', command: (event) => { this.onMenuCommand.emit({type: MenuCommandType.saveBlueprint, data: null}); } },
-          {label: 'Upload', icon:'pi pi-upload', items:[
-            {label: 'Game (yaml)', command: (event) => { this.uploadYamlTemplate(); } },
-            {label: 'Blueprint (json)', command: (event) => { this.uploadJsonTemplate(); } },
-            {label: 'Blueprint (binary)', command: (event) => { this.uploadBsonTemplate(); } }
+          {label: $localize`Upload`, icon:'pi pi-upload', items:[
+            {label: $localize`Game (yaml)`, command: (event) => { this.uploadYamlTemplate(); } },
+            {label: $localize`Blueprint (json)`, command: (event) => { this.uploadJsonTemplate(); } },
+            {label: $localize`Blueprint (binary)`, command: (event) => { this.uploadBsonTemplate(); } }
           ]},
-          {label: 'Download', icon:'pi pi-download', items:[
-            {label: 'Blueprint (json)', command: (event) => { this.onMenuCommand.emit({type: MenuCommandType.exportBlueprint, data: null}); } }
+          {label: $localize`Download`, icon:'pi pi-download', items:[
+            {label: $localize`Blueprint (json)`, command: (event) => { this.onMenuCommand.emit({type: MenuCommandType.exportBlueprint, data: null}); } }
           ]},
-          {label: 'Browse', icon:'pi pi-search', command: (event) => { this.onMenuCommand.emit({type: MenuCommandType.browseBlueprints, data: null}); } },
-          {label: 'Get shareable Url', icon:'pi pi-share-alt', command: (event) => { this.onMenuCommand.emit({type: MenuCommandType.getShareableUrl, data: null}); } },
-          {label: 'Export images', icon:'pi pi-images', command: (event) => { this.onMenuCommand.emit({type: MenuCommandType.exportImages, data: null}); } }
+          {label: $localize`Browse`, icon:'pi pi-search', command: (event) => { this.onMenuCommand.emit({type: MenuCommandType.browseBlueprints, data: null}); } },
+          {label: $localize`Get shareable Url`, icon:'pi pi-share-alt', command: (event) => { this.onMenuCommand.emit({type: MenuCommandType.getShareableUrl, data: null}); } },
+          {label: $localize`Export images`, icon:'pi pi-images', command: (event) => { this.onMenuCommand.emit({type: MenuCommandType.exportImages, data: null}); } }
         ]
       },
       {
-        label: 'Edit',
+        label: $localize`Edit`,
         items: [
-          {label: 'Undo', icon:'pi pi-undo',    command: (event) => { this.blueprintService.undo(); } },
-          {label: 'Redo', icon:'pi pi-replay',  command: (event) => { this.blueprintService.redo(); } },
+          {label: $localize`Undo`, icon:'pi pi-undo',    command: (event) => { this.blueprintService.undo(); } },
+          {label: $localize`Redo`, icon:'pi pi-replay',  command: (event) => { this.blueprintService.redo(); } },
         ]
       },
       {
-        label: 'Tools',
+        label: $localize`Tools`,
         items: this.toolMenuItems
       },
       {
-        label: 'Overlay',
+        label: $localize`Overlay`,
         items: this.overlayMenuItems
       },
       {
-        label: 'Visualization',
+        label: $localize`Visualization`,
         items: this.visualizationMenuItems
       }
       ,
       {
-        label: 'Display',
+        label: $localize`Display`,
         items: this.displayMenuItems
       },
       {
-        label: 'More',
+        label: $localize`More`,
         items : [
           {
-            label: 'About',
+            label: $localize`About`,
             icon:'pi pi-info-circle', command: (event) => { this.onMenuCommand.emit({type: MenuCommandType.about, data: null}); }
           },
           {
-            label: 'Discord',
+            label: $localize`Discord`,
             icon:'fab fa-discord', url:'https://discord.gg/69vRZZT', target:'discord'
           },
           {
-            label: 'Github',
+            label: $localize`Github`,
             icon:'fab fa-github', url:'https://github.com/simonlourson/blueprintnotincluded/', target:'github'
           }
         ]

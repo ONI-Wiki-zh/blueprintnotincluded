@@ -13,25 +13,25 @@ export class ComponentLoginDialogComponent implements OnInit {
 
   visible: boolean = false;
   loginType: LoginType = LoginType.Login;
-  
+
   @ViewChild('loginDialog', {static: true}) loginDialog: Dialog
   @ViewChild('loginForm') loginForm: LoginFormComponent
   @ViewChild('registerForm') registerForm: RegisterFormComponent
 
 
-  get label() { return this.isLogin ? 'Login' : 'Register' } //!loginForm.valid || loginForm.pending || working
-  get icon() { 
+  get label() { return this.isLogin ? $localize`Login` : $localize`Register` } //!loginForm.valid || loginForm.pending || working
+  get icon() {
     if (this.isLogin && this.loginForm != null) return this.loginForm.working ? 'pi pi-spin pi-spinner' : '';
     else if (this.isRegistration && this.registerForm != null) return this.registerForm.working ? 'pi pi-spin pi-spinner' : '';
     else return '';
   }
-  get disabled() { 
+  get disabled() {
     if (this.isLogin && this.loginForm != null) return !this.loginForm.loginForm.valid || this.loginForm.loginForm.pending || this.loginForm.working ;
     else if (this.isRegistration && this.registerForm != null) return !this.registerForm.registerForm.valid || this.registerForm.registerForm.pending || this.registerForm.working ;
     else return false;
   }
 
-  constructor(private cdRef: ChangeDetectorRef) { 
+  constructor(private cdRef: ChangeDetectorRef) {
   }
 
   ngOnInit() {

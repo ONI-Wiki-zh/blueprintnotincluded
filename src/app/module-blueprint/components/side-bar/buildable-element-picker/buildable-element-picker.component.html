@@ -1,6 +1,6 @@
 <fieldset class="ui-fieldset ui-widget ui-widget-content ui-corner-all">
   <legend class="ui-fieldset-legend ui-corner-all ui-state-default ui-unselectable-text">
-    <span class="ui-fieldset-legend-text ui-fieldset-false-link" (click)="elementsVisualization()">Elements</span>
+    <span class="ui-fieldset-legend-text ui-fieldset-false-link" (click)="elementsVisualization()" i18n>Elements</span>
   </legend>
   <div class="ui-fieldset-content-wrapper" >
     <div class="ui-fieldset-content">
@@ -16,7 +16,7 @@
         <div *ngIf="showWarning(indexElement)" class="error-red">
           Warning : Not every selected building is made of {{currentElement[indexElement].name}}
         </div>
-    
+
         <p-overlayPanel  [appendTo]="'body'">
           <div *ngIf="!isGasLiquid" class="element-panel-content">
             <div *ngFor="let buildableElement of buildableElementsArray[indexElement]">

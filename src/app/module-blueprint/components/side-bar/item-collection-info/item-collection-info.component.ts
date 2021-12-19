@@ -19,7 +19,7 @@ export class ItemCollectionInfoComponent implements OnInit, IObsSelected {
 
   @ViewChild('focusElement', {static: true}) focusElement: ElementRef;
 
-  get debug() { 
+  get debug() {
     let debug = this.itemCollection.items[0] as any;
     let debugInfo = {connections: debug.connections };
     return JSON.stringify(debugInfo);
@@ -44,7 +44,8 @@ export class ItemCollectionInfoComponent implements OnInit, IObsSelected {
   constructor(private blueprintService: BlueprintService, private toolService: ToolService) { }
 
   ngOnInit() {
-    this.nbItems = this.itemCollection.items.length +  ' item' + (this.itemCollection.items.length > 1 ? 's' : '') + ' selected'
+    const numItems = this.itemCollection.items.length
+    this.nbItems = $localize`${numItems} item${numItems > 1 ? 's' : ''} selected`;
     this.itemCollection.subscribeSelected(this);
   }
 
@@ -54,7 +55,7 @@ export class ItemCollectionInfoComponent implements OnInit, IObsSelected {
 
   buildingsCopy() {
     this.toolService.changeTool(ToolType.build);
-    
+
     let newItem = BlueprintHelpers.cloneBlueprintItem(this.itemCollection.items[0]);
 
     this.toolService.buildTool.changeItem(newItem);

@@ -18,16 +18,16 @@ export class ComponentSaveDialogComponent implements OnInit {
 
   @Output() onSave = new EventEmitter();
   @Output() onUpdateThumbnail = new EventEmitter();
-  
+
   saveBlueprintForm = new FormGroup({
     thumbnailType: new FormControl('Color', [Validators.required]),
     name: new FormControl('', [Validators.required, BlueprintNameValidationDirective.validateBlueprintName]),
-    
+
   });
 
   get f() { return this.saveBlueprintForm.controls; }
   get icon() { return this.working || this.blueprintService.thumbnail == null ? 'pi pi-spin pi-spinner' : ''; }
-  get saveLabel() { return this.blueprintService.thumbnail == null ? 'Generating thumbnail' : 'Save' }
+  get saveLabel() { return this.blueprintService.thumbnail == null ? $localize`:saveLabel:Generating thumbnail` : $localize`:saveLabel:Save` }
   get disabledSaveButton() { return !this.saveBlueprintForm.valid || this.saveBlueprintForm.pending || this.working || !this.authService.isLoggedIn() || this.blueprintService.thumbnail == null }
 
   working: boolean = false;
@@ -35,7 +35,7 @@ export class ComponentSaveDialogComponent implements OnInit {
   overwrite: boolean = false;
 
   constructor(
-    public blueprintService: BlueprintService, 
+    public blueprintService: BlueprintService,
     private messageService: MessageService,
     //TODO should not be public
     public authService: AuthenticationService) { }
@@ -58,8 +58,8 @@ export class ComponentSaveDialogComponent implements OnInit {
   public id: string;
   handleSaveNext(response: any)
   {
-    
-    if (response.overwrite) 
+
+    if (response.overwrite)
     {
       this.overwrite = true;
       this.saveBlueprintForm.controls.name.disable();
@@ -72,7 +72,7 @@ export class ComponentSaveDialogComponent implements OnInit {
       // TODO move this to the service ?
       let summary: string = this.blueprintService.name + ' saved';
       let detail: string = '';
-  
+
       this.messageService.add({severity:'success', summary:summary , detail:detail});
       this.working = false;
     }

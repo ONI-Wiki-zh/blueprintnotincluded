@@ -1,10 +1,10 @@
 <div>{{thresholdSwitchSideScreen.title}} :</div>
 <div><b>{{valueLabel}}</b></div>
 <div class="button-container">
-  <button pButton [ngClass]="classAbove" label="Above" (click)="clickAbove()"></button>
-  <button pButton [ngClass]="classBelow" label="Below" (click)="clickBelow()"></button>
+  <button pButton [ngClass]="classAbove" i18n-label label="Above" (click)="clickAbove()"></button>
+  <button pButton [ngClass]="classBelow" i18n-label label="Below" (click)="clickBelow()"></button>
 </div>
-<p-slider 
+<p-slider
   [(ngModel)]="value"
   [min]="thresholdSwitchSideScreen.rangeMin"
   [max]="correctedMaxRange"

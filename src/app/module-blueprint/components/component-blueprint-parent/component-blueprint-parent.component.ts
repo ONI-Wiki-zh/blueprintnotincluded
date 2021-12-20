@@ -197,7 +197,7 @@ export class ComponentBlueprintParentComponent implements OnInit, IObsBlueprintC
 
           let buildMenuCategories: BuildMenuCategory[] = json.buildMenuCategories;
           for (const bm of buildMenuCategories) {
-            const localizedName = await this.gameCodeService.getStr(`STRINGS.UI.NEWBUILDCATEGORIES.${bm.categoryName.toUpperCase()}.NAME`);
+            const localizedName = await this.gameCodeService.getStr(`STRINGS.UI.BUILDCATEGORIES.${bm.categoryName.toUpperCase()}.NAME`);
             if (!localizedName) console.warn(`Can not translate buildMenuCategories`, bm);
             bm.categoryShowName = localizedName || bm.categoryName
           }

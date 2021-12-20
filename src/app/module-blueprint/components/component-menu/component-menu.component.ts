@@ -16,6 +16,14 @@ const ALL_LANGUAGES = [
     code: 'zh-Hans',
     name: $localize`:language name here:zh-Hans`
   },
+  {
+    code: 'ru',
+    name: $localize`:language name here:ru`
+  },
+  {
+    code: 'ko',
+    name: $localize`:language name here:ko`
+  },
 ]
 
 @Component({

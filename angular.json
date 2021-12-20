@@ -12,7 +12,9 @@
       "i18n": {
         "sourceLocale": "en-US",
         "locales": {
-          "zh-Hans": "src/i18n/messages.zh-Hans.xlf"
+          "zh-Hans": "src/i18n/messages.zh-Hans.xlf",
+          "ru": "src/i18n/messages.ru.xlf",
+          "ko": "src/i18n/messages.ko.xlf"
         }
       },
       "architect": {
@@ -70,8 +72,20 @@
                 }
               ]
             },
+            "dev": {
+              "localize": true,
+              "optimization": false
+            },
             "zh-Hans": {
               "localize": ["zh-Hans"],
+              "optimization": false
+            },
+            "ru": {
+              "localize": ["ru"],
+              "optimization": false
+            },
+            "ko": {
+              "localize": ["ko"],
               "optimization": false
             }
           }
@@ -88,6 +102,12 @@
             },
             "zh-Hans": {
               "browserTarget": "blueprintnotincluded:build:zh-Hans"
+            },
+            "ru": {
+              "browserTarget": "blueprintnotincluded:build:ru"
+            },
+            "ko": {
+              "browserTarget": "blueprintnotincluded:build:ko"
             }
           }
         },

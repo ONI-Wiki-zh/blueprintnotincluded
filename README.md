@@ -27,7 +27,9 @@ If you want to contribute translations to Blueprintnotincluded, you can edit fil
 1. add your language in the `languages` field of [xliffmerge.json](./xliffmerge.json)
 2. Run `npm run extract-i18n`
 3. Add your language in [angular.json](./angular.json)(`projects.blueprintnotincluded.i18n.locales`)
-4. (Optional) To sever a localized build, a new configuration in [angular.json](./angular.json)(`projects.blueprintnotincluded.architect.build.configurations` and `projects.blueprintnotincluded.architect.serve.configurations`) is needed.
+4. To translate the in-game names (elements and buildings name etc.), an in-game string file (.po) should be added to [src\assets\strings](src\assets\strings). It should also be mentioned in [game-string-service.ts](src\app\module-blueprint\services\game-string-service.ts).
+5. (Optional) To sever a localized build, a new configuration in [angular.json](./angular.json) is needed.
+6. (Optional) Finally you can add the new language to the [top manual](src\app\module-blueprint\components\component-menu\component-menu.component.ts).
 
 ## Further help
 

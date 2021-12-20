@@ -1,8 +1,8 @@
+import { HttpClient } from '@angular/common/http';
 import { Component, ElementRef, OnInit, Renderer2, ViewChild } from '@angular/core';
 // Library imports
 import { ActivatedRoute, Params, UrlSegment } from '@angular/router';
 import * as JSZip from 'jszip';
-import * as JSZipUtils from 'jszip-utils';
 import { MessageService } from 'primeng/api';
 import { } from 'sanitize-filename';
 import { BBuilding, Blueprint, BSpriteInfo, BSpriteModifier, BuildableElement, BuildMenuCategory, BuildMenuItem, CameraService, ImageSource, OniItem, Overlay, SpriteInfo, SpriteModifier, Vector2 } from '../../../../../../blueprintnotincluded-lib/index';
@@ -87,6 +87,7 @@ export class ComponentBlueprintParentComponent implements OnInit, IObsBlueprintC
     private blueprintService: BlueprintService,
     public toolService: ToolService,
     private renderer: Renderer2,
+    private http: HttpClient,
     public gameStringService: GameStringService
     ) {
   }
@@ -178,9 +179,7 @@ export class ComponentBlueprintParentComponent implements OnInit, IObsBlueprintC
 
 
     // Start comment here
-    JSZipUtils.getBinaryContent('/assets/database/database.zip', (err, data) => {
-      if(err) { throw err; }
-
+    this.http.get("assets/database/database.zip", {responseType: "arraybuffer"}).subscribe(data => {
       JSZip.loadAsync(data).then((zipped) => {
         zipped.files['database.json'].async('text').then(async (text) => {
           let json = JSON.parse(text);
@@ -227,7 +226,7 @@ export class ComponentBlueprintParentComponent implements OnInit, IObsBlueprintC
       .catch((error) => {
         reject(error);
       });
-    });
+    })
     // End comment here
 
 

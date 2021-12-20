@@ -1,12 +1,22 @@
-import { Component, OnInit, Output, EventEmitter } from '@angular/core';
-
-import { MenuItem, MessageService} from 'primeng/api';
-import { CameraService, IObsCameraChanged, DrawHelpers, Overlay, Display, Visualization } from '../../../../../../blueprintnotincluded-lib/index'
+import { Component, EventEmitter, Inject, LOCALE_ID, OnInit, Output } from '@angular/core';
+import { Router } from '@angular/router';
+import { MenuItem, MessageService } from 'primeng/api';
+import { CameraService, Display, DrawHelpers, IObsCameraChanged, Overlay, Visualization } from '../../../../../../blueprintnotincluded-lib/index';
 import { ToolType } from '../../common/tools/tool';
 import { AuthenticationService } from '../../services/authentification-service';
-import { ToolService, IObsToolChanged } from '../../services/tool-service';
-import { Router } from '@angular/router';
-import { BlueprintService, BlueprintFileType } from '../../services/blueprint-service';
+import { BlueprintFileType, BlueprintService } from '../../services/blueprint-service';
+import { IObsToolChanged, ToolService } from '../../services/tool-service';
+
+const ALL_LANGUAGES = [
+  {
+    code: 'en-US',
+    name: $localize`:language name here:en-US`
+  },
+  {
+    code: 'zh-Hans',
+    name: $localize`:language name here:zh-Hans`
+  },
+]
 
 @Component({
   selector: 'app-component-menu',
@@ -22,6 +32,7 @@ export class ComponentMenuComponent implements OnInit, IObsToolChanged, IObsCame
   displayMenuItems: MenuItem[];
   visualizationMenuItems: MenuItem[];
   toolMenuItems: MenuItem[];
+  languagesMenuItems: MenuItem[];
 
   static debugFps: number = 0
   public getFps() { return ComponentMenuComponent.debugFps; }
@@ -34,7 +45,8 @@ export class ComponentMenuComponent implements OnInit, IObsToolChanged, IObsCame
     private messageService: MessageService,
     private toolService: ToolService,
     private blueprintService: BlueprintService,
-    private router: Router)
+    private router: Router,
+    @Inject(LOCALE_ID) private locale: string)
   {
     this.toolService.subscribeToolChanged(this);
     this.cameraService = CameraService.cameraService;
@@ -75,11 +87,16 @@ export class ComponentMenuComponent implements OnInit, IObsToolChanged, IObsCame
     this.visualizationMenuItems.push({label: $localize`Temperature`,  id:Visualization.temperature.toString(),  command: (event) => { this.clickVisualization(event); }});
     this.visualizationMenuItems.push({label: $localize`Elements`,     id:Visualization.elements.toString(),     command: (event) => { this.clickVisualization(event); }});
 
-
     this.toolMenuItems = [
       {label: $localize`Select`,         id:ToolType[ToolType.select],        command: (event) => { this.clickTool(ToolType.select); }},
       {label: $localize`Build`,          id:ToolType[ToolType.build],         command: (event) => { this.clickTool(ToolType.build); }},
     ];
+
+    this.languagesMenuItems = [];
+    for (const lang of ALL_LANGUAGES) {
+      if (lang.code === this.locale) continue;
+      this.languagesMenuItems.push({label: lang.name, url: (this.locale === 'en-US' ? '/' : '/../') + lang.code});
+    }
 
     this.menuItems = [
       {
@@ -119,8 +136,7 @@ export class ComponentMenuComponent implements OnInit, IObsToolChanged, IObsCame
       {
         label: $localize`Visualization`,
         items: this.visualizationMenuItems
-      }
-      ,
+      },
       {
         label: $localize`Display`,
         items: this.displayMenuItems
@@ -139,9 +155,13 @@ export class ComponentMenuComponent implements OnInit, IObsToolChanged, IObsCame
           {
             label: $localize`Github`,
             icon:'fab fa-github', url:'https://github.com/simonlourson/blueprintnotincluded/', target:'github'
-          }
+          },
         ]
-      }
+      },
+      {
+        label: this.locale,
+        items : this.languagesMenuItems
+      },
 
       /*
       // This is done on the node backend now
@@ -159,6 +179,7 @@ export class ComponentMenuComponent implements OnInit, IObsToolChanged, IObsCame
       */
 
     ];
+
 
 
     this.clickOverlay({item:{id:Overlay.Base}});

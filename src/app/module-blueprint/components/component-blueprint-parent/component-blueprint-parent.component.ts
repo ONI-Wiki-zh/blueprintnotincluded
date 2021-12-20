@@ -1,28 +1,28 @@
-import { Component, OnInit, ViewChild, ChangeDetectorRef, ElementRef, Renderer2 } from '@angular/core';
-import {MessageService, Message} from 'primeng/api';
-import { ComponentCanvasComponent } from '../component-canvas/component-canvas.component';
-var sanitize = require("sanitize-filename");
-import { } from 'sanitize-filename';
-import * as JSZipUtils from 'jszip-utils';
-import * as JSZip from 'jszip';
-
+import { Component, ElementRef, OnInit, Renderer2, ViewChild } from '@angular/core';
 // Library imports
 import { ActivatedRoute, Params, UrlSegment } from '@angular/router';
-import { MenuCommand, MenuCommandType, BrowseData } from '../component-menu/component-menu.component';
+import * as JSZip from 'jszip';
+import * as JSZipUtils from 'jszip-utils';
+import { MessageService } from 'primeng/api';
+import { } from 'sanitize-filename';
+import { BBuilding, Blueprint, BSpriteInfo, BSpriteModifier, BuildableElement, BuildMenuCategory, BuildMenuItem, CameraService, ImageSource, OniItem, Overlay, SpriteInfo, SpriteModifier, Vector2 } from '../../../../../../blueprintnotincluded-lib/index';
 import { ToolType } from '../../common/tools/tool';
-import { Blueprint, CameraService, SpriteInfo, ImageSource, OniItem, SpriteModifier, Overlay, BSpriteInfo, BBuilding, BSpriteModifier, BuildMenuCategory, BuildMenuItem, BuildableElement, Vector2 } from '../../../../../../blueprintnotincluded-lib/index';
-import { ComponentLoginDialogComponent } from '../user-auth/login-dialog/login-dialog.component';
-import { BlueprintService, IObsBlueprintChanged, ExportImageOptions } from '../../services/blueprint-service';
+import { AuthenticationService } from '../../services/authentification-service';
+import { BlueprintService, ExportImageOptions, IObsBlueprintChanged } from '../../services/blueprint-service';
+import { GameStringService } from '../../services/game-string-service';
+import { ToolService } from '../../services/tool-service';
+import { ComponentCanvasComponent } from '../component-canvas/component-canvas.component';
+import { BrowseData, MenuCommand, MenuCommandType } from '../component-menu/component-menu.component';
 import { ComponentSaveDialogComponent } from '../dialogs/component-save-dialog/component-save-dialog.component';
-import { DialogShareUrlComponent } from '../dialogs/dialog-share-url/dialog-share-url.component';
+import { DialogAboutComponent } from '../dialogs/dialog-about/dialog-about.component';
 import { DialogBrowseComponent } from '../dialogs/dialog-browse/dialog-browse.component';
 import { DialogExportImagesComponent } from '../dialogs/dialog-export-images/dialog-export-images.component';
-import { ToolService } from '../../services/tool-service';
-import { AuthenticationService } from '../../services/authentification-service';
+import { DialogShareUrlComponent } from '../dialogs/dialog-share-url/dialog-share-url.component';
 import { ComponentSideBuildToolComponent } from '../side-bar/build-tool/build-tool.component';
-import { DialogAboutComponent } from '../dialogs/dialog-about/dialog-about.component';
 import { ComponentSideSelectionToolComponent } from '../side-bar/selection-tool/selection-tool.component';
-import {GameCodeService} from '../../services/game-string-service'
+import { ComponentLoginDialogComponent } from '../user-auth/login-dialog/login-dialog.component';
+var sanitize = require("sanitize-filename");
+
 /*
 TODO Feature List before release :
 
@@ -87,7 +87,7 @@ export class ComponentBlueprintParentComponent implements OnInit, IObsBlueprintC
     private blueprintService: BlueprintService,
     public toolService: ToolService,
     private renderer: Renderer2,
-    public gameCodeService: GameCodeService
+    public gameStringService: GameStringService
     ) {
   }
 
@@ -189,16 +189,16 @@ export class ComponentBlueprintParentComponent implements OnInit, IObsBlueprintC
 
           let elements: BuildableElement[] = json.elements;
           for (const e of elements) {
-            const localizedName = await this.gameCodeService.getStr(`STRINGS.ELEMENTS.${e.id.toUpperCase()}.NAME`);
-            if (!localizedName) console.warn(`Can not translate element`, e);
+            const localizedName = await this.gameStringService.getStr(`STRINGS.ELEMENTS.${e.id.toUpperCase()}.NAME`);
+            if (!localizedName) console.warn(`Missing element translation`, e);
             e.name = localizedName || e.name
           }
           BuildableElement.load(elements);
 
           let buildMenuCategories: BuildMenuCategory[] = json.buildMenuCategories;
           for (const bm of buildMenuCategories) {
-            const localizedName = await this.gameCodeService.getStr(`STRINGS.UI.BUILDCATEGORIES.${bm.categoryName.toUpperCase()}.NAME`);
-            if (!localizedName) console.warn(`Can not translate buildMenuCategories`, bm);
+            const localizedName = await this.gameStringService.getStr(`STRINGS.UI.BUILDCATEGORIES.${bm.categoryName.toUpperCase()}.NAME`);
+            if (!localizedName) console.warn(`Missing buildMenuCategory translation`, bm);
             bm.categoryShowName = localizedName || bm.categoryName
           }
           BuildMenuCategory.load(buildMenuCategories);
@@ -214,8 +214,8 @@ export class ComponentBlueprintParentComponent implements OnInit, IObsBlueprintC
 
           let buildings: BBuilding[] = json.buildings;
           for (const b of buildings) {
-            const localizedName = await this.gameCodeService.getStr(`STRINGS.BUILDINGS.PREFABS.${b.prefabId.toUpperCase()}.NAME`);
-            if (!localizedName) console.warn(`Can not translate building`, b);
+            const localizedName = await this.gameStringService.getStr(`STRINGS.BUILDINGS.PREFABS.${b.prefabId.toUpperCase()}.NAME`);
+            if (!localizedName) console.warn(`Missing building translation`, b);
             b.name = localizedName
           }
           OniItem.load(buildings);

@@ -1,5 +1,5 @@
 <p-dialog #browseDialog
-  header='Browse Blueprints'
+  i18n-header header='Browse Blueprints'
   [(visible)]="visible"
   [modal]="true"
   [dismissableMask]="true"
@@ -20,7 +20,7 @@
 
 
 
-  <p-checkbox [(ngModel)]="getDuplicates" binary="true" label="Show duplicate blueprints" (onChange)="duplicateChange()"></p-checkbox>
+  <p-checkbox [(ngModel)]="getDuplicates" binary="true" i18n-label label="Show duplicate blueprints" (onChange)="duplicateChange()"></p-checkbox>
   <br>
   <p-checkbox *ngIf="filterUserName != null" [(ngModel)]="filterUser" binary="true" i18n-label label="Show only blueprints by {{filterUserName}}" (onChange)="filterUserChange()"></p-checkbox>
 

@@ -2,96 +2,6 @@
 <xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
   <file source-language="en-US" datatype="plaintext" original="ng2.template">
     <body>
-      <trans-unit id="1616102757855967475" datatype="html">
-        <source>All</source>
-        <context-group purpose="location">
-          <context context-type="sourcefile">../blueprintnotincluded-lib/src/b-export/b-build-order.ts</context>
-          <context context-type="linenumber">31</context>
-        </context-group>
-        <note priority="1" from="description">All building categories</note>
-      </trans-unit>
-      <trans-unit id="3831888701177438945" datatype="html">
-        <source>Absolute Zero</source>
-        <context-group purpose="location">
-          <context context-type="sourcefile">../blueprintnotincluded-lib/src/drawing/draw-helpers.ts</context>
-          <context context-type="linenumber">272</context>
-        </context-group>
-        <note priority="1" from="description">temperature scale</note>
-      </trans-unit>
-      <trans-unit id="1563613081423118910" datatype="html">
-        <source>Cold</source>
-        <context-group purpose="location">
-          <context context-type="sourcefile">../blueprintnotincluded-lib/src/drawing/draw-helpers.ts</context>
-          <context context-type="linenumber">273</context>
-        </context-group>
-        <note priority="1" from="description">temperature scale</note>
-      </trans-unit>
-      <trans-unit id="6569842731540242967" datatype="html">
-        <source>Chilled</source>
-        <context-group purpose="location">
-          <context context-type="sourcefile">../blueprintnotincluded-lib/src/drawing/draw-helpers.ts</context>
-          <context context-type="linenumber">274</context>
-        </context-group>
-        <note priority="1" from="description">temperature scale</note>
-      </trans-unit>
-      <trans-unit id="691776249635893547" datatype="html">
-        <source>Temperate</source>
-        <context-group purpose="location">
-          <context context-type="sourcefile">../blueprintnotincluded-lib/src/drawing/draw-helpers.ts</context>
-          <context context-type="linenumber">275</context>
-        </context-group>
-        <note priority="1" from="description">temperature scale</note>
-      </trans-unit>
-      <trans-unit id="687697231920360362" datatype="html">
-        <source>Warm</source>
-        <context-group purpose="location">
-          <context context-type="sourcefile">../blueprintnotincluded-lib/src/drawing/draw-helpers.ts</context>
-          <context context-type="linenumber">276</context>
-        </context-group>
-        <note priority="1" from="description">temperature scale</note>
-      </trans-unit>
-      <trans-unit id="676860092433275829" datatype="html">
-        <source>Hot</source>
-        <context-group purpose="location">
-          <context context-type="sourcefile">../blueprintnotincluded-lib/src/drawing/draw-helpers.ts</context>
-          <context context-type="linenumber">277</context>
-        </context-group>
-        <note priority="1" from="description">temperature scale</note>
-      </trans-unit>
-      <trans-unit id="8591568352026006611" datatype="html">
-        <source>Scorching</source>
-        <context-group purpose="location">
-          <context context-type="sourcefile">../blueprintnotincluded-lib/src/drawing/draw-helpers.ts</context>
-          <context context-type="linenumber">278</context>
-        </context-group>
-        <note priority="1" from="description">temperature scale</note>
-      </trans-unit>
-      <trans-unit id="271649037299316066" datatype="html">
-        <source>Molten</source>
-        <context-group purpose="location">
-          <context context-type="sourcefile">../blueprintnotincluded-lib/src/drawing/draw-helpers.ts</context>
-          <context context-type="linenumber">279</context>
-        </context-group>
-        <context-group purpose="location">
-          <context context-type="sourcefile">../blueprintnotincluded-lib/src/drawing/draw-helpers.ts</context>
-          <context context-type="linenumber">280</context>
-        </context-group>
-        <note priority="1" from="description">temperature scale</note>
-      </trans-unit>
-      <trans-unit id="7618280416108842340" datatype="html">
-        <source>Element</source>
-        <context-group purpose="location">
-          <context context-type="sourcefile">../blueprintnotincluded-lib/src/oni-item.ts</context>
-          <context context-type="linenumber">230</context>
-        </context-group>
-      </trans-unit>
-      <trans-unit id="314315645942131479" datatype="html">
-        <source>Info</source>
-        <context-group purpose="location">
-          <context context-type="sourcefile">../blueprintnotincluded-lib/src/oni-item.ts</context>
-          <context context-type="linenumber">242</context>
-        </context-group>
-      </trans-unit>
       <trans-unit id="4406083567579960326" datatype="html">
         <source>Can&apos;t build here : <x id="PH" equiv-text="templateItem.oniItem.name"/> is in the way</source>
         <context-group purpose="location">
@@ -157,71 +67,119 @@
         </context-group>
         <note priority="1" from="description">language name here</note>
       </trans-unit>
+      <trans-unit id="2739110767355255632" datatype="html">
+        <source>Buildings</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/module-blueprint/components/component-menu/component-menu.component.ts</context>
+          <context context-type="linenumber">68</context>
+        </context-group>
+        <note priority="1" from="description">overlay switch on the menu</note>
+      </trans-unit>
+      <trans-unit id="5690241527890097775" datatype="html">
+        <source>Power</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/module-blueprint/components/component-menu/component-menu.component.ts</context>
+          <context context-type="linenumber">69</context>
+        </context-group>
+        <note priority="1" from="description">overlay switch on the menu</note>
+      </trans-unit>
+      <trans-unit id="9082579204263109567" datatype="html">
+        <source>Plumbing</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/module-blueprint/components/component-menu/component-menu.component.ts</context>
+          <context context-type="linenumber">70</context>
+        </context-group>
+        <note priority="1" from="description">overlay switch on the menu</note>
+      </trans-unit>
+      <trans-unit id="80013287692085350" datatype="html">
+        <source>Ventilation</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/module-blueprint/components/component-menu/component-menu.component.ts</context>
+          <context context-type="linenumber">71</context>
+        </context-group>
+        <note priority="1" from="description">overlay switch on the menu</note>
+      </trans-unit>
+      <trans-unit id="6236514510816269149" datatype="html">
+        <source>Automation</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/module-blueprint/components/component-menu/component-menu.component.ts</context>
+          <context context-type="linenumber">72</context>
+        </context-group>
+        <note priority="1" from="description">overlay switch on the menu</note>
+      </trans-unit>
+      <trans-unit id="6283988996123974917" datatype="html">
+        <source>Shipment</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/module-blueprint/components/component-menu/component-menu.component.ts</context>
+          <context context-type="linenumber">73</context>
+        </context-group>
+        <note priority="1" from="description">overlay switch on the menu</note>
+      </trans-unit>
       <trans-unit id="4341675379036538127" datatype="html">
         <source>Blueprint</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/module-blueprint/components/component-menu/component-menu.component.ts</context>
-          <context context-type="linenumber">82</context>
+          <context context-type="linenumber">85</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/module-blueprint/components/component-menu/component-menu.component.ts</context>
-          <context context-type="linenumber">104</context>
+          <context context-type="linenumber">107</context>
         </context-group>
       </trans-unit>
       <trans-unit id="9011959596901584887" datatype="html">
         <source>Color</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/module-blueprint/components/component-menu/component-menu.component.ts</context>
-          <context context-type="linenumber">83</context>
+          <context context-type="linenumber">86</context>
         </context-group>
       </trans-unit>
       <trans-unit id="6252070156626006029" datatype="html">
         <source>None</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/module-blueprint/components/component-menu/component-menu.component.ts</context>
-          <context context-type="linenumber">86</context>
+          <context context-type="linenumber">89</context>
         </context-group>
       </trans-unit>
       <trans-unit id="2592368582911584624" datatype="html">
         <source>Temperature</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/module-blueprint/components/component-menu/component-menu.component.ts</context>
-          <context context-type="linenumber">87</context>
+          <context context-type="linenumber">90</context>
         </context-group>
       </trans-unit>
       <trans-unit id="6856981935030444519" datatype="html">
         <source>Elements</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/module-blueprint/components/component-menu/component-menu.component.ts</context>
-          <context context-type="linenumber">88</context>
+          <context context-type="linenumber">91</context>
         </context-group>
       </trans-unit>
       <trans-unit id="3797570084942068182" datatype="html">
         <source>Select</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/module-blueprint/components/component-menu/component-menu.component.ts</context>
-          <context context-type="linenumber">91</context>
+          <context context-type="linenumber">94</context>
         </context-group>
       </trans-unit>
       <trans-unit id="6924245241744002654" datatype="html">
         <source>Build</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/module-blueprint/components/component-menu/component-menu.component.ts</context>
-          <context context-type="linenumber">92</context>
+          <context context-type="linenumber">95</context>
         </context-group>
       </trans-unit>
       <trans-unit id="5280218112746407598" datatype="html">
         <source>New</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/module-blueprint/components/component-menu/component-menu.component.ts</context>
-          <context context-type="linenumber">106</context>
+          <context context-type="linenumber">109</context>
         </context-group>
       </trans-unit>
       <trans-unit id="3768927257183755959" datatype="html">
         <source>Save</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/module-blueprint/components/component-menu/component-menu.component.ts</context>
-          <context context-type="linenumber">107</context>
+          <context context-type="linenumber">110</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/module-blueprint/components/dialogs/component-save-dialog/component-save-dialog.component.ts</context>
@@ -232,137 +190,137 @@
         <source>Upload</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/module-blueprint/components/component-menu/component-menu.component.ts</context>
-          <context context-type="linenumber">108</context>
+          <context context-type="linenumber">111</context>
         </context-group>
       </trans-unit>
       <trans-unit id="2234669536195515158" datatype="html">
         <source>Game (yaml)</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/module-blueprint/components/component-menu/component-menu.component.ts</context>
-          <context context-type="linenumber">109</context>
+          <context context-type="linenumber">112</context>
         </context-group>
       </trans-unit>
       <trans-unit id="8938307798595091508" datatype="html">
         <source>Blueprint (json)</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/module-blueprint/components/component-menu/component-menu.component.ts</context>
-          <context context-type="linenumber">110</context>
+          <context context-type="linenumber">113</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/module-blueprint/components/component-menu/component-menu.component.ts</context>
-          <context context-type="linenumber">114</context>
+          <context context-type="linenumber">117</context>
         </context-group>
       </trans-unit>
       <trans-unit id="2628317491606128407" datatype="html">
         <source>Blueprint (binary)</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/module-blueprint/components/component-menu/component-menu.component.ts</context>
-          <context context-type="linenumber">111</context>
+          <context context-type="linenumber">114</context>
         </context-group>
       </trans-unit>
       <trans-unit id="3099741642167775297" datatype="html">
         <source>Download</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/module-blueprint/components/component-menu/component-menu.component.ts</context>
-          <context context-type="linenumber">113</context>
+          <context context-type="linenumber">116</context>
         </context-group>
       </trans-unit>
       <trans-unit id="787163983066183218" datatype="html">
         <source>Browse</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/module-blueprint/components/component-menu/component-menu.component.ts</context>
-          <context context-type="linenumber">116</context>
+          <context context-type="linenumber">119</context>
         </context-group>
       </trans-unit>
       <trans-unit id="7327036354897610977" datatype="html">
         <source>Get shareable Url</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/module-blueprint/components/component-menu/component-menu.component.ts</context>
-          <context context-type="linenumber">117</context>
+          <context context-type="linenumber">120</context>
         </context-group>
       </trans-unit>
       <trans-unit id="7454278866457302323" datatype="html">
         <source>Export images</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/module-blueprint/components/component-menu/component-menu.component.ts</context>
-          <context context-type="linenumber">118</context>
+          <context context-type="linenumber">121</context>
         </context-group>
       </trans-unit>
       <trans-unit id="7585826646011739428" datatype="html">
         <source>Edit</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/module-blueprint/components/component-menu/component-menu.component.ts</context>
-          <context context-type="linenumber">122</context>
+          <context context-type="linenumber">125</context>
         </context-group>
       </trans-unit>
       <trans-unit id="5775346636203685655" datatype="html">
         <source>Undo</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/module-blueprint/components/component-menu/component-menu.component.ts</context>
-          <context context-type="linenumber">124</context>
+          <context context-type="linenumber">127</context>
         </context-group>
       </trans-unit>
       <trans-unit id="4221042196936324014" datatype="html">
         <source>Redo</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/module-blueprint/components/component-menu/component-menu.component.ts</context>
-          <context context-type="linenumber">125</context>
+          <context context-type="linenumber">128</context>
         </context-group>
       </trans-unit>
       <trans-unit id="1684734235599362204" datatype="html">
         <source>Tools</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/module-blueprint/components/component-menu/component-menu.component.ts</context>
-          <context context-type="linenumber">129</context>
+          <context context-type="linenumber">132</context>
         </context-group>
       </trans-unit>
       <trans-unit id="684837893006065048" datatype="html">
         <source>Overlay</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/module-blueprint/components/component-menu/component-menu.component.ts</context>
-          <context context-type="linenumber">133</context>
+          <context context-type="linenumber">136</context>
         </context-group>
       </trans-unit>
       <trans-unit id="9098712055524516876" datatype="html">
         <source>Visualization</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/module-blueprint/components/component-menu/component-menu.component.ts</context>
-          <context context-type="linenumber">137</context>
+          <context context-type="linenumber">140</context>
         </context-group>
       </trans-unit>
       <trans-unit id="6812930637022637485" datatype="html">
         <source>Display</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/module-blueprint/components/component-menu/component-menu.component.ts</context>
-          <context context-type="linenumber">141</context>
+          <context context-type="linenumber">144</context>
         </context-group>
       </trans-unit>
       <trans-unit id="5937251202465808296" datatype="html">
         <source>More</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/module-blueprint/components/component-menu/component-menu.component.ts</context>
-          <context context-type="linenumber">145</context>
+          <context context-type="linenumber">148</context>
         </context-group>
       </trans-unit>
       <trans-unit id="1726363342938046830" datatype="html">
         <source>About</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/module-blueprint/components/component-menu/component-menu.component.ts</context>
-          <context context-type="linenumber">148</context>
+          <context context-type="linenumber">151</context>
         </context-group>
       </trans-unit>
       <trans-unit id="3400027835914346369" datatype="html">
         <source>Discord</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/module-blueprint/components/component-menu/component-menu.component.ts</context>
-          <context context-type="linenumber">152</context>
+          <context context-type="linenumber">155</context>
         </context-group>
       </trans-unit>
       <trans-unit id="3119797645194699699" datatype="html">
         <source>Github</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/module-blueprint/components/component-menu/component-menu.component.ts</context>
-          <context context-type="linenumber">156</context>
+          <context context-type="linenumber">159</context>
         </context-group>
       </trans-unit>
       <trans-unit id="152daa7cdeeee904ab0c0afe895b5fd580c62813" datatype="html">
@@ -513,6 +471,13 @@
           <context context-type="linenumber">38</context>
         </context-group>
       </trans-unit>
+      <trans-unit id="23680ab0b7cc6affe1d889f665fa97c764b7198b" datatype="html">
+        <source>Browse Blueprints</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/module-blueprint/components/dialogs/dialog-browse/dialog-browse.component.html</context>
+          <context context-type="linenumber">2</context>
+        </context-group>
+      </trans-unit>
       <trans-unit id="7e892ba15f2c6c17e83510e273b3e10fc32ea016" datatype="html">
         <source>Search</source>
         <context-group purpose="location">
@@ -522,6 +487,13 @@
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/module-blueprint/components/side-bar/cell-element-picker/cell-element-picker.component.html</context>
           <context context-type="linenumber">3</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="0a01865a678d512fe065eb16a14eaf792d2aa19d" datatype="html">
+        <source>Show duplicate blueprints</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/module-blueprint/components/dialogs/dialog-browse/dialog-browse.component.html</context>
+          <context context-type="linenumber">23</context>
         </context-group>
       </trans-unit>
       <trans-unit id="fe6863474749cb941a60a7e7b31b1f8e628110ff" datatype="html">
@@ -558,6 +530,21 @@
           <context context-type="sourcefile">src/app/module-blueprint/components/dialogs/dialog-browse/dialog-browse.component.html</context>
           <context context-type="linenumber">63</context>
         </context-group>
+      </trans-unit>
+      <trans-unit id="3894950702316166331" datatype="html">
+        <source>Loading...</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/module-blueprint/components/dialogs/dialog-browse/dialog-browse.component.ts</context>
+          <context context-type="linenumber">11</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="8161264306826042917" datatype="html">
+        <source>No Results</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/module-blueprint/components/dialogs/dialog-browse/dialog-browse.component.ts</context>
+          <context context-type="linenumber">64</context>
+        </context-group>
+        <note priority="1" from="description">nothingBlueprintItem.name</note>
       </trans-unit>
       <trans-unit id="20ea7c36410ef58614ed97bbee6396a49f9b61b2" datatype="html">
         <source>Export with grid lines</source>
@@ -642,6 +629,22 @@
           <context context-type="sourcefile">src/app/module-blueprint/components/side-bar/build-tool/build-tool.component.html</context>
           <context context-type="linenumber">65</context>
         </context-group>
+      </trans-unit>
+      <trans-unit id="7618280416108842340" datatype="html">
+        <source>Element</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/module-blueprint/components/side-bar/build-tool/build-tool.component.ts</context>
+          <context context-type="linenumber">88</context>
+        </context-group>
+        <note priority="1" from="description">special item</note>
+      </trans-unit>
+      <trans-unit id="314315645942131479" datatype="html">
+        <source>Info</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/module-blueprint/components/side-bar/build-tool/build-tool.component.ts</context>
+          <context context-type="linenumber">89</context>
+        </context-group>
+        <note priority="1" from="description">special item</note>
       </trans-unit>
       <trans-unit id="cdb1d7b065a59509471520408d8bd80892f544a9" datatype="html">
         <source>Elements</source>
@@ -787,14 +790,14 @@
         <source>(Above <x id="PH" equiv-text="celsius"/>°C)</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/module-blueprint/components/side-bar/temperature-scale/temperature-scale.component.ts</context>
-          <context context-type="linenumber">33</context>
+          <context context-type="linenumber">36</context>
         </context-group>
       </trans-unit>
       <trans-unit id="8109946779315555845" datatype="html">
         <source>(<x id="PH" equiv-text="celsius"/>°C ~ <x id="PH_1" equiv-text="celsiusNext"/>°C)</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/module-blueprint/components/side-bar/temperature-scale/temperature-scale.component.ts</context>
-          <context context-type="linenumber">36</context>
+          <context context-type="linenumber">39</context>
         </context-group>
       </trans-unit>
       <trans-unit id="76d585e98f73b5cea9622e06df89d1e42e933d7d" datatype="html">

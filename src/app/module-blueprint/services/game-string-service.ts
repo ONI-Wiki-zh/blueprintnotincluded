@@ -11,9 +11,10 @@ const gameStrings = {
 }
 
 @Injectable({ providedIn: 'root' })
-export class GameCodeService {
+export class GameStringService {
   private poFile: string;
   private poData: Promise<Record<string, string>>;
+  public dict: Record<string, string>;
 
   constructor(@Inject(LOCALE_ID) private locale: string, private http: HttpClient) {
     this.poFile = gameStrings[this.locale] || gameStrings[getLocaleId(this.locale)]
@@ -37,6 +38,7 @@ export class GameCodeService {
           }
           ctx2str[msgctxt] = translated
         })
+        this.dict = ctx2str
         res(ctx2str);
       })
     })

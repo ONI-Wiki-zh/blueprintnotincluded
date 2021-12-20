@@ -5,7 +5,7 @@
   </div>
   <div *ngFor="let dataItem of temperatureData; let index = index" class="temperature-line">
     <div class="temperature-color" [style.background-color]="temperatureColor(index)"></div>
-    <div class="temperature-text">{{dataItem.label}}</div>
+    <div class="temperature-text">{{temperatureLabel(index)}}</div>
     <div class="temperature-spacer"></div>
     <div class="temperature-range">{{temperatureRange(index)}}</div>
   </div>

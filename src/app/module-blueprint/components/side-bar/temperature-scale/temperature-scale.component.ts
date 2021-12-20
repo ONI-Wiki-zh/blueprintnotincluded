@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { CameraService, DrawHelpers, TemperatureThreshold, Visualization } from '../../../../../../../blueprintnotincluded-lib/index';
+import { GameStringService } from '../../../services/game-string-service';
 
 @Component({
   selector: 'app-temperature-scale',
@@ -12,7 +13,9 @@ export class TemperatureScaleComponent implements OnInit {
 
   private cameraService: CameraService
 
-  constructor() {
+  constructor(
+    public gameStringService: GameStringService
+  ) {
 
     this.cameraService = CameraService.cameraService;
 
@@ -35,6 +38,11 @@ export class TemperatureScaleComponent implements OnInit {
       const celsiusNext = (this.temperatureData[index-1].temperature - 273.15).toFixed(0)
       return $localize`(${celsius}°C ~ ${celsiusNext}°C)`;
     };
+  }
+
+  temperatureLabel(index: number) {
+    const msgctxt = `STRINGS.UI.OVERLAYS.TEMPERATURE.${this.temperatureData[index].code}`
+    return this.gameStringService.dict[msgctxt]
   }
 
   close() {

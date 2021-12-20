@@ -64,18 +64,21 @@ export class ComponentMenuComponent implements OnInit, IObsToolChanged, IObsCame
 
   ngOnInit() {
 
-    let overlayList: Overlay[] = [
-      Overlay.Base,
-      Overlay.Power,
-      Overlay.Liquid,
-      Overlay.Gas,
-      Overlay.Automation,
-      Overlay.Conveyor
+    let overlayList: {id:Overlay, name: string}[] = [
+      {id: Overlay.Base, name: $localize`:overlay switch on the menu:Buildings`},
+      {id: Overlay.Power, name: $localize`:overlay switch on the menu:Power`},
+      {id: Overlay.Liquid, name: $localize`:overlay switch on the menu:Plumbing`},
+      {id: Overlay.Gas, name: $localize`:overlay switch on the menu:Ventilation`},
+      {id: Overlay.Automation, name: $localize`:overlay switch on the menu:Automation`},
+      {id: Overlay.Conveyor, name: $localize`:overlay switch on the menu:Shipment`}
     ]
-
     this.overlayMenuItems = [];
     overlayList.map((overlay) => {
-      this.overlayMenuItems.push({label:DrawHelpers.overlayString[overlay], id:overlay.toString(), command: (event) => { this.clickOverlay(event); }})
+      this.overlayMenuItems.push({
+        label: overlay.name,
+        id:overlay.id.toString(),
+        command: (event) => { this.clickOverlay(event); }
+      })
     });
 
     this.displayMenuItems = [];
@@ -159,7 +162,7 @@ export class ComponentMenuComponent implements OnInit, IObsToolChanged, IObsCame
         ]
       },
       {
-        label: this.locale,
+        label: ALL_LANGUAGES.find(l => l.code === this.locale)?.name || this.locale,
         items : this.languagesMenuItems
       },
 
@@ -177,16 +180,12 @@ export class ComponentMenuComponent implements OnInit, IObsToolChanged, IObsCame
         ]
       }
       */
-
     ];
-
-
 
     this.clickOverlay({item:{id:Overlay.Base}});
     this.clickDisplay({item:{id:Display.solid}});
     this.clickVisualization({item:{id:Visualization.none}});
     this.clickTool(ToolType.select);
-
   }
 
   toolChanged(toolType: ToolType) {

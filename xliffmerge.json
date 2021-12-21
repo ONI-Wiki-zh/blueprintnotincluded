@@ -14,9 +14,9 @@
     "useSourceAsTarget": true,
     "targetPraefix": "",
     "targetSuffix": "",
-    "beautifyOutput": false,
+    "beautifyOutput": true,
     "preserveOrder": true,
-    "allowIdChange": false,
+    "allowIdChange": true,
     "verbose": false,
     "quiet": false
   }

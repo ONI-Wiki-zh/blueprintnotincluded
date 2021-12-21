@@ -15,7 +15,7 @@
           <context context-type="linenumber">71</context>
         </context-group>
       </trans-unit><trans-unit id="249270185d8289080e258dd202da24711f82f768" datatype="html">
-        <source> Your browser does not support canvas. </source><target state="translated">您的浏览器不支持 canvas。</target>
+        <source> Your browser does not support canvas. </source><target state="translated"> 您的浏览器不支持 canvas </target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/module-blueprint/components/component-canvas/component-canvas.component.html</context>
           <context context-type="linenumber">19,23</context>
@@ -148,7 +148,7 @@
         
         
       <context-group purpose="location"><context context-type="sourcefile">src/app/module-blueprint/components/component-menu/component-menu.component.ts</context><context context-type="linenumber">124</context></context-group></trans-unit><trans-unit id="787163983066183218" datatype="html">
-        <source>Browse</source><target state="needs-l10n">Browse</target>
+        <source>Browse</source><target state="translated">浏览</target>
         
         
       <context-group purpose="location"><context context-type="sourcefile">src/app/module-blueprint/components/component-menu/component-menu.component.ts</context><context context-type="linenumber">127</context></context-group></trans-unit><trans-unit id="7327036354897610977" datatype="html">
@@ -204,7 +204,7 @@
         
         
       <context-group purpose="location"><context context-type="sourcefile">src/app/module-blueprint/components/component-menu/component-menu.component.ts</context><context context-type="linenumber">167</context></context-group></trans-unit><trans-unit id="152daa7cdeeee904ab0c0afe895b5fd580c62813" datatype="html">
-        <source>Save blueprint to the cloud</source><target state="needs-l10n">Save blueprint to the cloud</target>
+        <source>Save blueprint to the cloud</source><target state="translated">将蓝图保存到云端</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/module-blueprint/components/dialogs/component-save-dialog/component-save-dialog.component.html</context>
           <context context-type="linenumber">3</context>
@@ -216,122 +216,122 @@
           <context context-type="linenumber">18</context>
         </context-group>
       </trans-unit><trans-unit id="9a5b6fb356b275f56cae4490d6469357099f6235" datatype="html">
-        <source>Blueprint name is required.</source><target state="new">Blueprint name is required.</target>
+        <source>Blueprint name is required.</source><target state="translated">需要输入蓝图名</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/module-blueprint/components/dialogs/component-save-dialog/component-save-dialog.component.html</context>
           <context context-type="linenumber">21</context>
         </context-group>
       </trans-unit><trans-unit id="a4042c7096a4c40824f3f5da7b12201ae4711285" datatype="html">
-        <source>Invalid characters in blueprint name</source><target state="new">Invalid characters in blueprint name</target>
+        <source>Invalid characters in blueprint name</source><target state="translated">蓝图名中含有无效字符</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/module-blueprint/components/dialogs/component-save-dialog/component-save-dialog.component.html</context>
           <context context-type="linenumber">22</context>
         </context-group>
       </trans-unit><trans-unit id="c2b3b4593f38bb01a8ff6dcc3fbc7017e8eb31f8" datatype="html">
-        <source>Blueprint name is too long</source><target state="new">Blueprint name is too long</target>
+        <source>Blueprint name is too long</source><target state="translated">蓝图名过长</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/module-blueprint/components/dialogs/component-save-dialog/component-save-dialog.component.html</context>
           <context context-type="linenumber">23</context>
         </context-group>
       </trans-unit><trans-unit id="86ef5f1aba23346f8d1b6c0bf8f24be5121d0e64" datatype="html">
-        <source>You already have a blueprint with this name. Overwrite?</source><target state="new">You already have a blueprint with this name. Overwrite?</target>
+        <source>You already have a blueprint with this name. Overwrite?</source><target state="translated">已经存在同名蓝图，是否覆盖？</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/module-blueprint/components/dialogs/component-save-dialog/component-save-dialog.component.html</context>
           <context context-type="linenumber">25</context>
         </context-group>
       </trans-unit><trans-unit id="63840da4c59c78bae87607b1d9099d2a28ae8fd0" datatype="html">
-        <source>You must be logged in to save a blueprint</source><target state="new">You must be logged in to save a blueprint</target>
+        <source>You must be logged in to save a blueprint</source><target state="translated">登录后才能保存蓝图</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/module-blueprint/components/dialogs/component-save-dialog/component-save-dialog.component.html</context>
           <context context-type="linenumber">26</context>
         </context-group>
       </trans-unit><trans-unit id="3d3ae7deebc5949b0c1c78b9847886a94321d9fd" datatype="html">
-        <source>No</source><target state="new">No</target>
+        <source>No</source><target state="translated">否</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/module-blueprint/components/dialogs/component-save-dialog/component-save-dialog.component.html</context>
           <context context-type="linenumber">31</context>
         </context-group>
       </trans-unit><trans-unit id="4f20f2d5a6882190892e58b85f6ccbedfa737952" datatype="html">
-        <source>Yes</source><target state="new">Yes</target>
+        <source>Yes</source><target state="translated">是</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/module-blueprint/components/dialogs/component-save-dialog/component-save-dialog.component.html</context>
           <context context-type="linenumber">32</context>
         </context-group>
       </trans-unit><trans-unit id="2687911090712930839" datatype="html">
-        <source>Generating thumbnail</source><target state="new">Generating thumbnail</target>
+        <source>Generating thumbnail</source><target state="translated">生成缩略图</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/module-blueprint/components/dialogs/component-save-dialog/component-save-dialog.component.ts</context>
           <context context-type="linenumber">30</context>
         </context-group>
         <note priority="1" from="description">saveLabel</note>
       </trans-unit><trans-unit id="79290682954f8c5bfc4367dbbbabd384f66b87f0" datatype="html">
-        <source>About BlueprintNotIncluded</source><target state="new">About BlueprintNotIncluded</target>
+        <source>About BlueprintNotIncluded</source><target state="translated">关于 BlueprintNotIncluded</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/module-blueprint/components/dialogs/dialog-about/dialog-about.component.html</context>
           <context context-type="linenumber">3</context>
         </context-group>
       </trans-unit><trans-unit id="95b2fb3dace7db1508dfe37b6f97079a21f7da57" datatype="html">
-        <source>What is this website ?</source><target state="new">What is this website ?</target>
+        <source>What is this website ?</source><target state="translated">这是哪里？</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/module-blueprint/components/dialogs/dialog-about/dialog-about.component.html</context>
           <context context-type="linenumber">9</context>
         </context-group>
       </trans-unit><trans-unit id="835dcb6a25f9fa07c9f8834438731f3750d55ecb" datatype="html">
-        <source><x id="TAG_IMG" ctype="image" equiv-text="&lt;img class=&quot;image-float-right&quot; height=&quot;200px&quot; src=&quot;assets/images/ui/manual/logo.png&quot;>"/> Hi! I created this website after playing <x id="START_LINK" ctype="x-a" equiv-text="&lt;a href=&quot;https://www.klei.com/games/oxygen-not-included&quot; target=&quot;_blank&quot;>"/>Oyxgen not included<x id="CLOSE_LINK" ctype="x-a" equiv-text="&lt;/a>"/> for a while, browsing the subreddits and forums for the game. One thing I noticed is that when sharing their builds, people usually share a bunch of imgur pictures with the different overlays. This is fine for simple builds, but you can't very well zoom in, switch overlays, look what the setting is on that buffer logic switch... So I decided to create a tool where players could either upload the builds they created in game, or create their build from scratch on the web page. Here are some current features of the website : <x id="START_UNORDERED_LIST" ctype="x-ul" equiv-text="&lt;ul>"/><x id="START_LIST_ITEM" ctype="x-li" equiv-text="&lt;li>"/>You can build your blueprint from scratch using the various tools<x id="CLOSE_LIST_ITEM" ctype="x-li" equiv-text="&lt;/li>"/><x id="START_LIST_ITEM" ctype="x-li" equiv-text="&lt;li>"/>You can import templates from the game (more on that later)<x id="CLOSE_LIST_ITEM" ctype="x-li" equiv-text="&lt;/li>"/><x id="START_LIST_ITEM" ctype="x-li" equiv-text="&lt;li>"/>You can cycle between various overlays. each overlay will hightlight different buildings<x id="CLOSE_LIST_ITEM" ctype="x-li" equiv-text="&lt;/li>"/><x id="START_LIST_ITEM" ctype="x-li" equiv-text="&lt;li>"/>You can save your blueprints<x id="CLOSE_LIST_ITEM" ctype="x-li" equiv-text="&lt;/li>"/><x id="START_LIST_ITEM" ctype="x-li" equiv-text="&lt;li>"/>You can share your blueprints, by exporting png images for each overlay<x id="CLOSE_LIST_ITEM" ctype="x-li" equiv-text="&lt;/li>"/><x id="START_LIST_ITEM" ctype="x-li" equiv-text="&lt;li>"/>Or by sharing a link that will directly open your blueprint! <x id="START_LINK_1" equiv-text="&lt;a href=&quot;https://blueprintnotincluded.com/b/5de2666b7c0edb5515e65315&quot; target=&quot;blueprint_link&quot;>"/>click here to open my SPOM in a new tab!<x id="CLOSE_LINK" ctype="x-a" equiv-text="&lt;/a>"/><x id="CLOSE_LIST_ITEM" ctype="x-li" equiv-text="&lt;/li>"/><x id="CLOSE_UNORDERED_LIST" ctype="x-ul" equiv-text="&lt;/ul>"/></source><target state="new"><x id="TAG_IMG" ctype="image" equiv-text="&lt;img class=&quot;image-float-right&quot; height=&quot;200px&quot; src=&quot;assets/images/ui/manual/logo.png&quot;>"/> Hi! I created this website after playing <x id="START_LINK" ctype="x-a" equiv-text="&lt;a href=&quot;https://www.klei.com/games/oxygen-not-included&quot; target=&quot;_blank&quot;>"/>Oyxgen not included<x id="CLOSE_LINK" ctype="x-a" equiv-text="&lt;/a>"/> for a while, browsing the subreddits and forums for the game. One thing I noticed is that when sharing their builds, people usually share a bunch of imgur pictures with the different overlays. This is fine for simple builds, but you can't very well zoom in, switch overlays, look what the setting is on that buffer logic switch... So I decided to create a tool where players could either upload the builds they created in game, or create their build from scratch on the web page. Here are some current features of the website : <x id="START_UNORDERED_LIST" ctype="x-ul" equiv-text="&lt;ul>"/><x id="START_LIST_ITEM" ctype="x-li" equiv-text="&lt;li>"/>You can build your blueprint from scratch using the various tools<x id="CLOSE_LIST_ITEM" ctype="x-li" equiv-text="&lt;/li>"/><x id="START_LIST_ITEM" ctype="x-li" equiv-text="&lt;li>"/>You can import templates from the game (more on that later)<x id="CLOSE_LIST_ITEM" ctype="x-li" equiv-text="&lt;/li>"/><x id="START_LIST_ITEM" ctype="x-li" equiv-text="&lt;li>"/>You can cycle between various overlays. each overlay will hightlight different buildings<x id="CLOSE_LIST_ITEM" ctype="x-li" equiv-text="&lt;/li>"/><x id="START_LIST_ITEM" ctype="x-li" equiv-text="&lt;li>"/>You can save your blueprints<x id="CLOSE_LIST_ITEM" ctype="x-li" equiv-text="&lt;/li>"/><x id="START_LIST_ITEM" ctype="x-li" equiv-text="&lt;li>"/>You can share your blueprints, by exporting png images for each overlay<x id="CLOSE_LIST_ITEM" ctype="x-li" equiv-text="&lt;/li>"/><x id="START_LIST_ITEM" ctype="x-li" equiv-text="&lt;li>"/>Or by sharing a link that will directly open your blueprint! <x id="START_LINK_1" equiv-text="&lt;a href=&quot;https://blueprintnotincluded.com/b/5de2666b7c0edb5515e65315&quot; target=&quot;blueprint_link&quot;>"/>click here to open my SPOM in a new tab!<x id="CLOSE_LINK" ctype="x-a" equiv-text="&lt;/a>"/><x id="CLOSE_LIST_ITEM" ctype="x-li" equiv-text="&lt;/li>"/><x id="CLOSE_UNORDERED_LIST" ctype="x-ul" equiv-text="&lt;/ul>"/></target>
+        <source><x id="TAG_IMG" ctype="image" equiv-text="&lt;img class=&quot;image-float-right&quot; height=&quot;200px&quot; src=&quot;assets/images/ui/manual/logo.png&quot;>"/> Hi! I created this website after playing <x id="START_LINK" ctype="x-a" equiv-text="&lt;a href=&quot;https://www.klei.com/games/oxygen-not-included&quot; target=&quot;_blank&quot;>"/>Oyxgen not included<x id="CLOSE_LINK" ctype="x-a" equiv-text="&lt;/a>"/> for a while, browsing the subreddits and forums for the game. One thing I noticed is that when sharing their builds, people usually share a bunch of imgur pictures with the different overlays. This is fine for simple builds, but you can't very well zoom in, switch overlays, look what the setting is on that buffer logic switch... So I decided to create a tool where players could either upload the builds they created in game, or create their build from scratch on the web page. Here are some current features of the website : <x id="START_UNORDERED_LIST" ctype="x-ul" equiv-text="&lt;ul>"/><x id="START_LIST_ITEM" ctype="x-li" equiv-text="&lt;li>"/>You can build your blueprint from scratch using the various tools<x id="CLOSE_LIST_ITEM" ctype="x-li" equiv-text="&lt;/li>"/><x id="START_LIST_ITEM" ctype="x-li" equiv-text="&lt;li>"/>You can import templates from the game (more on that later)<x id="CLOSE_LIST_ITEM" ctype="x-li" equiv-text="&lt;/li>"/><x id="START_LIST_ITEM" ctype="x-li" equiv-text="&lt;li>"/>You can cycle between various overlays. each overlay will hightlight different buildings<x id="CLOSE_LIST_ITEM" ctype="x-li" equiv-text="&lt;/li>"/><x id="START_LIST_ITEM" ctype="x-li" equiv-text="&lt;li>"/>You can save your blueprints<x id="CLOSE_LIST_ITEM" ctype="x-li" equiv-text="&lt;/li>"/><x id="START_LIST_ITEM" ctype="x-li" equiv-text="&lt;li>"/>You can share your blueprints, by exporting png images for each overlay<x id="CLOSE_LIST_ITEM" ctype="x-li" equiv-text="&lt;/li>"/><x id="START_LIST_ITEM" ctype="x-li" equiv-text="&lt;li>"/>Or by sharing a link that will directly open your blueprint! <x id="START_LINK_1" equiv-text="&lt;a href=&quot;https://blueprintnotincluded.com/b/5de2666b7c0edb5515e65315&quot; target=&quot;blueprint_link&quot;>"/>click here to open my SPOM in a new tab!<x id="CLOSE_LINK" ctype="x-a" equiv-text="&lt;/a>"/><x id="CLOSE_LIST_ITEM" ctype="x-li" equiv-text="&lt;/li>"/><x id="CLOSE_UNORDERED_LIST" ctype="x-ul" equiv-text="&lt;/ul>"/></source><target state="translated"><x id="TAG_IMG" ctype="image" equiv-text="&lt;img class=&quot;image-float-right&quot; height=&quot;200px&quot; src=&quot;assets/images/ui/manual/logo.png&quot;>"/> 嗨！我在玩了一段时间的<x id="START_LINK" ctype="x-a" equiv-text="&lt;a href=&quot;https://www.klei.com/games/oxygen-not-included&quot; target=&quot;_blank&quot;>"/>《缺氧》<x id="CLOSE_LINK" ctype="x-a" equiv-text="&lt;/a>"/>，并浏览了它的 subreddit 和论坛之后创建了这个网站。在浏览这些网站的时候，我注意到了一件事——人们在分享他们的建筑模块时，通常会用一堆 Imgur 图片展示不同概览下的模块截图。对于比较简单的模块，这个方法还比较适用。但是，用这种方法不能把图片放得很大，也不能轻松切换概览，更不能查看缓冲门的时长设置……因此，我决定创建一个小工具——玩家们可以用它上传游戏中的模块，也可以直接在网站上用它建造模块。下面列举了本网站的一些现有特性：<x id="START_UNORDERED_LIST" ctype="x-ul" equiv-text="&lt;ul>"/><x id="START_LIST_ITEM" ctype="x-li" equiv-text="&lt;li>"/>可以用各种工具从头建造一个蓝图<x id="CLOSE_LIST_ITEM" ctype="x-li" equiv-text="&lt;/li>"/><x id="START_LIST_ITEM" ctype="x-li" equiv-text="&lt;li>"/>可以从游戏中直接导入模板（后文有详细信息）<x id="CLOSE_LIST_ITEM" ctype="x-li" equiv-text="&lt;/li>"/><x id="START_LIST_ITEM" ctype="x-li" equiv-text="&lt;li>"/>可以在不同概览间来回切换，不同的概览下会高亮显示不同的建筑<x id="CLOSE_LIST_ITEM" ctype="x-li" equiv-text="&lt;/li>"/><x id="START_LIST_ITEM" ctype="x-li" equiv-text="&lt;li>"/>可以保存蓝图<x id="CLOSE_LIST_ITEM" ctype="x-li" equiv-text="&lt;/li>"/><x id="START_LIST_ITEM" ctype="x-li" equiv-text="&lt;li>"/>可以通过导出各概览的 png 图片来分享蓝图<x id="CLOSE_LIST_ITEM" ctype="x-li" equiv-text="&lt;/li>"/><x id="START_LIST_ITEM" ctype="x-li" equiv-text="&lt;li>"/>或者直接用链接分享！<x id="START_LINK_1" equiv-text="&lt;a href=&quot;https://blueprintnotincluded.com/b/5de2666b7c0edb5515e65315&quot; target=&quot;blueprint_link&quot;>"/>点击这里可以在新标签页查看我的电解制氧模块！<x id="CLOSE_LINK" ctype="x-a" equiv-text="&lt;/a>"/><x id="CLOSE_LIST_ITEM" ctype="x-li" equiv-text="&lt;/li>"/><x id="CLOSE_UNORDERED_LIST" ctype="x-ul" equiv-text="&lt;/ul>"/></target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/module-blueprint/components/dialogs/dialog-about/dialog-about.component.html</context>
           <context context-type="linenumber">11,22</context>
         </context-group>
       </trans-unit><trans-unit id="2931fe4af03918369592002d560c8ed365ace00a" datatype="html">
-        <source>Controls</source><target state="new">Controls</target>
+        <source>Controls</source><target state="translated">控制</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/module-blueprint/components/dialogs/dialog-about/dialog-about.component.html</context>
           <context context-type="linenumber">26</context>
         </context-group>
       </trans-unit><trans-unit id="52c16326482dd696628d8500a60f729b47bc8c6e" datatype="html">
-        <source>Camera controls :</source><target state="new">Camera controls :</target>
+        <source>Camera controls :</source><target state="translated">镜头控制：</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/module-blueprint/components/dialogs/dialog-about/dialog-about.component.html</context>
           <context context-type="linenumber">29</context>
         </context-group>
       </trans-unit><trans-unit id="7f53c55628628ad085a5fe29e1360e10179acf7b" datatype="html">
-        <source>To move the camera with the mouse, press and hold the right mouse button, and drag the camera around</source><target state="new">To move the camera with the mouse, press and hold the right mouse button, and drag the camera around</target>
+        <source>To move the camera with the mouse, press and hold the right mouse button, and drag the camera around</source><target state="translated">如使用鼠标控制镜头，按住右键拖动即可移动镜头位置</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/module-blueprint/components/dialogs/dialog-about/dialog-about.component.html</context>
           <context context-type="linenumber">31</context>
         </context-group>
       </trans-unit><trans-unit id="331d3f9ba174a709051d09f8953c1221bc936bd8" datatype="html">
-        <source>Alternatively, you can use the arrow keys to move the camera by one tile in the direction of the arrow</source><target state="new">Alternatively, you can use the arrow keys to move the camera by one tile in the direction of the arrow</target>
+        <source>Alternatively, you can use the arrow keys to move the camera by one tile in the direction of the arrow</source><target state="translated">此外，你也可以用方向键使镜头往相应方向移动一格</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/module-blueprint/components/dialogs/dialog-about/dialog-about.component.html</context>
           <context context-type="linenumber">32</context>
         </context-group>
       </trans-unit><trans-unit id="4b703ea741d7d8750a984287094eb72bd7a256f9" datatype="html">
-        <source>To zoom in / out, you can either use the mouse wheel, or use the "+" or "-" keys on your keypad</source><target state="new">To zoom in / out, you can either use the mouse wheel, or use the "+" or "-" keys on your keypad</target>
+        <source>To zoom in / out, you can either use the mouse wheel, or use the "+" or "-" keys on your keypad</source><target state="translated">使用鼠标滚轮或键盘上的“+”“-”键即可缩放镜头</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/module-blueprint/components/dialogs/dialog-about/dialog-about.component.html</context>
           <context context-type="linenumber">33</context>
         </context-group>
       </trans-unit><trans-unit id="3cc794966c61e1527a769aa4e4fcb942d59c0d59" datatype="html">
-        <source>Other Controls :</source><target state="new">Other Controls :</target>
+        <source>Other Controls :</source><target state="translated">其它控制：</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/module-blueprint/components/dialogs/dialog-about/dialog-about.component.html</context>
           <context context-type="linenumber">35</context>
         </context-group>
       </trans-unit><trans-unit id="052f7e04a8f68966df9f41c042093c70b073fffe" datatype="html">
-        <source>Ctrl-Z and Ctrl-Y will "undo" / "redo" any action you just made. These are also available in the "Edit" menu</source><target state="new">Ctrl-Z and Ctrl-Y will "undo" / "redo" any action you just made. These are also available in the "Edit" menu</target>
+        <source>Ctrl-Z and Ctrl-Y will "undo" / "redo" any action you just made. These are also available in the "Edit" menu</source><target state="translated">按下 Ctrl+Z/Ctrl+Y 可以撤销/重做操作。你也可以在“编辑”菜单中找到它们</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/module-blueprint/components/dialogs/dialog-about/dialog-about.component.html</context>
           <context context-type="linenumber">37</context>
         </context-group>
       </trans-unit><trans-unit id="2529d1e4a0af78cfdf320ec1fadc68dd1dcc5b17" datatype="html">
-        <source>The "B" key will open the build tool. You can also get there with the "Tool : Build" menu</source><target state="new">The "B" key will open the build tool. You can also get there with the "Tool : Build" menu</target>
+        <source>The "B" key will open the build tool. You can also get there with the "Tool : Build" menu</source><target state="translated">按“B”打开建造工具。你也可以点击“工具”菜单栏中的“建造”一项来打开它</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/module-blueprint/components/dialogs/dialog-about/dialog-about.component.html</context>
           <context context-type="linenumber">38</context>
         </context-group>
       </trans-unit><trans-unit id="23680ab0b7cc6affe1d889f665fa97c764b7198b" datatype="html">
-        <source>Browse Blueprints</source><target state="new">Browse Blueprints</target>
+        <source>Browse Blueprints</source><target state="translated">浏览蓝图</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/module-blueprint/components/dialogs/dialog-browse/dialog-browse.component.html</context>
           <context context-type="linenumber">2</context>
@@ -384,37 +384,37 @@
         <source>Search</source><target state="translated">搜索</target>
         
       <context-group purpose="location"><context context-type="sourcefile">src/app/module-blueprint/components/dialogs/dialog-browse/dialog-browse.component.html</context><context context-type="linenumber">16</context></context-group><context-group purpose="location"><context context-type="sourcefile">src/app/module-blueprint/components/side-bar/cell-element-picker/cell-element-picker.component.html</context><context context-type="linenumber">3</context></context-group></trans-unit><trans-unit id="0a01865a678d512fe065eb16a14eaf792d2aa19d" datatype="html">
-        <source>Show duplicate blueprints</source><target state="new">Show duplicate blueprints</target>
+        <source>Show duplicate blueprints</source><target state="translated">显示复制蓝图</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/module-blueprint/components/dialogs/dialog-browse/dialog-browse.component.html</context>
           <context context-type="linenumber">23</context>
         </context-group>
       </trans-unit><trans-unit id="fe6863474749cb941a60a7e7b31b1f8e628110ff" datatype="html">
-        <source>Show only blueprints by <x id="INTERPOLATION" equiv-text="{{filterUserName}}"/></source><target state="new">Show only blueprints by <x id="INTERPOLATION" equiv-text="{{filterUserName}}"/></target>
+        <source>Show only blueprints by <x id="INTERPOLATION" equiv-text="{{filterUserName}}"/></source><target state="translated">只显示 <x id="INTERPOLATION" equiv-text="{{filterUserName}}"/> 制作的蓝图</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/module-blueprint/components/dialogs/dialog-browse/dialog-browse.component.html</context>
           <context context-type="linenumber">25</context>
         </context-group>
       </trans-unit><trans-unit id="23c047b8f9fccdad3dc8c7e32ddd1b7ef75a04c6" datatype="html">
-        <source>Delete this blueprint</source><target state="new">Delete this blueprint</target>
+        <source>Delete this blueprint</source><target state="translated">删除该蓝图</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/module-blueprint/components/dialogs/dialog-browse/dialog-browse.component.html</context>
           <context context-type="linenumber">48</context>
         </context-group>
       </trans-unit><trans-unit id="d0e06264fbf1e11fec7bebdb350cf922138cdd57" datatype="html">
-        <source>Author : <x id="START_LINK" ctype="x-a" equiv-text="&lt;a [routerLink]=&quot;&quot; (click)=&quot;filterOwner(item.ownerId, item.ownerName)&quot;>"/><x id="INTERPOLATION" equiv-text="{{item.ownerName}}"/><x id="CLOSE_LINK" ctype="x-a" equiv-text="&lt;/a>"/></source><target state="new">Author : <x id="START_LINK" ctype="x-a" equiv-text="&lt;a [routerLink]=&quot;&quot; (click)=&quot;filterOwner(item.ownerId, item.ownerName)&quot;>"/><x id="INTERPOLATION" equiv-text="{{item.ownerName}}"/><x id="CLOSE_LINK" ctype="x-a" equiv-text="&lt;/a>"/></target>
+        <source>Author : <x id="START_LINK" ctype="x-a" equiv-text="&lt;a [routerLink]=&quot;&quot; (click)=&quot;filterOwner(item.ownerId, item.ownerName)&quot;>"/><x id="INTERPOLATION" equiv-text="{{item.ownerName}}"/><x id="CLOSE_LINK" ctype="x-a" equiv-text="&lt;/a>"/></source><target state="translated">作者：<x id="START_LINK" ctype="x-a" equiv-text="&lt;a [routerLink]=&quot;&quot; (click)=&quot;filterOwner(item.ownerId, item.ownerName)&quot;>"/><x id="INTERPOLATION" equiv-text="{{item.ownerName}}"/><x id="CLOSE_LINK" ctype="x-a" equiv-text="&lt;/a>"/></target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/module-blueprint/components/dialogs/dialog-browse/dialog-browse.component.html</context>
           <context context-type="linenumber">61</context>
         </context-group>
       </trans-unit><trans-unit id="47280a22cf62a0228562e6ae67f098888697eb55" datatype="html">
-        <source>Created : <x id="INTERPOLATION" equiv-text="{{this.datepipe.transform(item.createdAt, 'yyyy-MM-dd')}}"/></source><target state="new">Created : <x id="INTERPOLATION" equiv-text="{{this.datepipe.transform(item.createdAt, 'yyyy-MM-dd')}}"/></target>
+        <source>Created : <x id="INTERPOLATION" equiv-text="{{this.datepipe.transform(item.createdAt, 'yyyy-MM-dd')}}"/></source><target state="translated">创建于：<x id="INTERPOLATION" equiv-text="{{this.datepipe.transform(item.createdAt, 'yyyy-MM-dd')}}"/></target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/module-blueprint/components/dialogs/dialog-browse/dialog-browse.component.html</context>
           <context context-type="linenumber">62</context>
         </context-group>
       </trans-unit><trans-unit id="48074b00e8dc68d73ecc77a35700c073a30dbd18" datatype="html">
-        <source>Modified : <x id="INTERPOLATION" equiv-text="{{this.datepipe.transform(item.modifiedAt, 'yyyy-MM-dd')}}"/></source><target state="new">Modified : <x id="INTERPOLATION" equiv-text="{{this.datepipe.transform(item.modifiedAt, 'yyyy-MM-dd')}}"/></target>
+        <source>Modified : <x id="INTERPOLATION" equiv-text="{{this.datepipe.transform(item.modifiedAt, 'yyyy-MM-dd')}}"/></source><target state="translated">修改于：<x id="INTERPOLATION" equiv-text="{{this.datepipe.transform(item.modifiedAt, 'yyyy-MM-dd')}}"/></target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/module-blueprint/components/dialogs/dialog-browse/dialog-browse.component.html</context>
           <context context-type="linenumber">63</context>
@@ -426,56 +426,56 @@
           <context context-type="linenumber">11</context>
         </context-group>
       </trans-unit><trans-unit id="8161264306826042917" datatype="html">
-        <source>No Results</source><target state="new">No Results</target>
+        <source>No Results</source><target state="translated">无结果</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/module-blueprint/components/dialogs/dialog-browse/dialog-browse.component.ts</context>
           <context context-type="linenumber">64</context>
         </context-group>
         <note priority="1" from="description">nothingBlueprintItem.name</note>
       </trans-unit><trans-unit id="20ea7c36410ef58614ed97bbee6396a49f9b61b2" datatype="html">
-        <source>Export with grid lines</source><target state="new">Export with grid lines</target>
+        <source>Export with grid lines</source><target state="translated">导出（含参考线）</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/module-blueprint/components/dialogs/dialog-export-images/dialog-export-images.component.html</context>
           <context context-type="linenumber">14</context>
         </context-group>
       </trans-unit><trans-unit id="01bb25d4d5588d8461e29210df721475a2fbfd1b" datatype="html">
-        <source>Image size: <x id="INTERPOLATION" equiv-text="{{finalSize}}"/></source><target state="new">Image size: <x id="INTERPOLATION" equiv-text="{{finalSize}}"/></target>
+        <source>Image size: <x id="INTERPOLATION" equiv-text="{{finalSize}}"/></source><target state="translated">图片大小：<x id="INTERPOLATION" equiv-text="{{finalSize}}"/></target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/module-blueprint/components/dialogs/dialog-export-images/dialog-export-images.component.html</context>
           <context context-type="linenumber">16</context>
         </context-group>
       </trans-unit><trans-unit id="661352a28fcfbb1d56767590be7997afd5b51894" datatype="html">
-        <source>About <x id="INTERPOLATION" equiv-text="{{finalSizeMb | number:'1.2-2'}}"/>Mb</source><target state="new">About <x id="INTERPOLATION" equiv-text="{{finalSizeMb | number:'1.2-2'}}"/>Mb</target>
+        <source>About <x id="INTERPOLATION" equiv-text="{{finalSizeMb | number:'1.2-2'}}"/>Mb</source><target state="translated">约 <x id="INTERPOLATION" equiv-text="{{finalSizeMb | number:'1.2-2'}}"/>Mb</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/module-blueprint/components/dialogs/dialog-export-images/dialog-export-images.component.html</context>
           <context context-type="linenumber">18</context>
         </context-group>
       </trans-unit><trans-unit id="f11772dce28e7e4fb1f72f0862fa34f797cdd62b" datatype="html">
-        <source>Download images</source><target state="new">Download images</target>
+        <source>Download images</source><target state="translated">下载图片</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/module-blueprint/components/dialogs/dialog-export-images/dialog-export-images.component.html</context>
           <context context-type="linenumber">38</context>
         </context-group>
       </trans-unit><trans-unit id="406938f527025d9e7717920a32493a6340019d96" datatype="html">
-        <source>Use the following url to share this blueprint : </source><target state="new">Use the following url to share this blueprint : </target>
+        <source>Use the following url to share this blueprint : </source><target state="translated">使用以下 URL 分享这个蓝图：</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/module-blueprint/components/dialogs/dialog-share-url/dialog-share-url.component.html</context>
           <context context-type="linenumber">13</context>
         </context-group>
       </trans-unit><trans-unit id="29e23753c3fd5c6b5b11cc236f48f700485d0dca" datatype="html">
-        <source>Copy url to clipboard</source><target state="new">Copy url to clipboard</target>
+        <source>Copy url to clipboard</source><target state="translated">将 URL 复制到剪贴板</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/module-blueprint/components/dialogs/dialog-share-url/dialog-share-url.component.html</context>
           <context context-type="linenumber">15</context>
         </context-group>
       </trans-unit><trans-unit id="6c128d5827c8e8e663840f7decc9d6dd18132e27" datatype="html">
-        <source>Open in new tab</source><target state="new">Open in new tab</target>
+        <source>Open in new tab</source><target state="translated">在新标签页打开</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/module-blueprint/components/dialogs/dialog-share-url/dialog-share-url.component.html</context>
           <context context-type="linenumber">16</context>
         </context-group>
       </trans-unit><trans-unit id="6338014948132404016" datatype="html">
-        <source>like<x id="PH" equiv-text="this.nbLikes != 1 ? 's':''"/></source><target state="new">like<x id="PH" equiv-text="this.nbLikes != 1 ? 's':''"/></target>
+        <source>like<x id="PH" equiv-text="this.nbLikes != 1 ? 's':''"/></source><target state="translated">赞<x id="PH" equiv-text="this.nbLikes != 1 ? 's':''"/></target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/module-blueprint/components/like-widget/like-widget.component.ts</context>
           <context context-type="linenumber">16</context>
@@ -547,7 +547,7 @@
           <context context-type="linenumber">48</context>
         </context-group>
       </trans-unit><trans-unit id="02fa09142bac43095fcbe4fe52a929ac87ccd2e2" datatype="html">
-        <source>Pipe Contents</source><target state="new">Pipe Contents</target>
+        <source>Pipe Contents</source><target state="translated">管道内容物</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/module-blueprint/components/side-bar/pipe-content/pipe-content.component.html</context>
           <context context-type="linenumber">3</context>
@@ -560,19 +560,19 @@
           <context context-type="linenumber">2</context>
         </context-group>
       </trans-unit><trans-unit id="15c43fad9b32f6f2694606fed1912daa4bbfde97" datatype="html">
-        <source>Select next item group</source><target state="new">Select next item group</target>
+        <source>Select next item group</source><target state="translated">选中下一组建筑</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/module-blueprint/components/side-bar/selection-tool/selection-tool.component.html</context>
           <context context-type="linenumber">4</context>
         </context-group>
       </trans-unit><trans-unit id="973daa1368066657d835c5bbeffd6c32c20590bc" datatype="html">
-        <source>Select previous item group</source><target state="new">Select previous item group</target>
+        <source>Select previous item group</source><target state="translated">选中上一组建筑</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/module-blueprint/components/side-bar/selection-tool/selection-tool.component.html</context>
           <context context-type="linenumber">5</context>
         </context-group>
       </trans-unit><trans-unit id="88f31e5e6a8cdbd76440badbb205d8642c0c299b" datatype="html">
-        <source>Destroy every item group</source><target state="new">Destroy every item group</target>
+        <source>Destroy every item group</source><target state="translated">删除所有选中建筑</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/module-blueprint/components/side-bar/selection-tool/selection-tool.component.html</context>
           <context context-type="linenumber">6</context>
@@ -584,7 +584,7 @@
           <context context-type="linenumber">3</context>
         </context-group>
       </trans-unit><trans-unit id="1cbd1691dc1b72c9268c873a6171aa2e5768d348" datatype="html">
-        <source> Warning : Not every selected building has the same temperature </source><target state="new"> Warning : Not every selected building has the same temperature </target>
+        <source> Warning : Not every selected building has the same temperature </source><target state="translated"> 警告：选中的建筑具有不同的温度 </target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/module-blueprint/components/side-bar/temperature-picker/temperature-picker.component.html</context>
           <context context-type="linenumber">38,40</context>
@@ -602,25 +602,25 @@
         <source>(<x id="PH" equiv-text="celsius"/>°C ~ <x id="PH_1" equiv-text="celsiusNext"/>°C)</source><target state="translated">（<x id="PH" equiv-text="celsius"/>°C ~ <x id="PH_1" equiv-text="celsiusNext"/>°C）</target>
         
       <context-group purpose="location"><context context-type="sourcefile">src/app/module-blueprint/components/side-bar/temperature-scale/temperature-scale.component.ts</context><context context-type="linenumber">39</context></context-group></trans-unit><trans-unit id="76d585e98f73b5cea9622e06df89d1e42e933d7d" datatype="html">
-        <source>Bit <x id="INTERPOLATION" equiv-text="{{index + 1}}"/></source><target state="new">Bit <x id="INTERPOLATION" equiv-text="{{index + 1}}"/></target>
+        <source>Bit <x id="INTERPOLATION" equiv-text="{{index + 1}}"/></source><target state="translated">位 <x id="INTERPOLATION" equiv-text="{{index + 1}}"/></target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/module-blueprint/components/side-bar/ui-screens/bit-selection-screen/bit-selection-screen.component.html</context>
           <context context-type="linenumber">4</context>
         </context-group>
       </trans-unit><trans-unit id="e74b08ed04bb8c4b865fa64414f5c7a12b5f9dd0" datatype="html">
-        <source>Above</source><target state="new">Above</target>
+        <source>Above</source><target state="translated">上方</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/module-blueprint/components/side-bar/ui-screens/threshold-switch-screen/threshold-switch-screen.component.html</context>
           <context context-type="linenumber">4</context>
         </context-group>
       </trans-unit><trans-unit id="2ed00f14cb74ca667ad8884101769de9e5db010b" datatype="html">
-        <source>Below</source><target state="new">Below</target>
+        <source>Below</source><target state="translated">下方</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/module-blueprint/components/side-bar/ui-screens/threshold-switch-screen/threshold-switch-screen.component.html</context>
           <context context-type="linenumber">5</context>
         </context-group>
       </trans-unit><trans-unit id="121cc5391cd2a5115bc2b3160379ee5b36cd7716" datatype="html">
-        <source>Settings</source><target state="new">Settings</target>
+        <source>Settings</source><target state="translated">设置</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/module-blueprint/components/side-bar/ui-screens/ui-screen-container/ui-screen-container.component.html</context>
           <context context-type="linenumber">3</context>
@@ -662,64 +662,64 @@
         <source>Authentification error</source><target state="translated">认证错误</target>
         
       <context-group purpose="location"><context context-type="sourcefile">src/app/module-blueprint/components/user-auth/login-form/login-form.component.html</context><context context-type="linenumber">22</context></context-group><context-group purpose="location"><context context-type="sourcefile">src/app/module-blueprint/components/user-auth/register-form/register-form.component.html</context><context context-type="linenumber">41</context></context-group></trans-unit><trans-unit id="8fb8edecb82adc07ab6056de1f7b9748d9bd37e5" datatype="html">
-        <source>First registration ?</source><target state="new">First registration ?</target>
+        <source>First registration ?</source><target state="translated">点此注册</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/module-blueprint/components/user-auth/login-form/login-form.component.html</context>
           <context context-type="linenumber">25</context>
         </context-group>
       </trans-unit><trans-unit id="e156475af74147611aa9b777f97efc868569f818" datatype="html">
-        <source> This site is protected by reCAPTCHA and the Google <x id="START_LINK" ctype="x-a" equiv-text="&lt;a href=&quot;https://policies.google.com/privacy&quot;>"/>Privacy Policy<x id="CLOSE_LINK" ctype="x-a" equiv-text="&lt;/a>"/> and <x id="START_LINK_1" equiv-text="&lt;a href=&quot;https://policies.google.com/terms&quot;>"/>Terms of Service<x id="CLOSE_LINK" ctype="x-a" equiv-text="&lt;/a>"/> apply. </source><target state="needs-l10n"> This site is protected by reCAPTCHA and the Google <x id="START_LINK" ctype="x-a" equiv-text="&lt;a href=&quot;https://policies.google.com/privacy&quot;>"/>隐私政策<x id="CLOSE_LINK" ctype="x-a" equiv-text="&lt;/a>"/> and <x id="START_LINK_1" equiv-text="&lt;a href=&quot;https://policies.google.com/terms&quot;>"/>Terms of Service<x id="CLOSE_LINK" ctype="x-a" equiv-text="&lt;/a>"/> apply. </target>
+        <source> This site is protected by reCAPTCHA and the Google <x id="START_LINK" ctype="x-a" equiv-text="&lt;a href=&quot;https://policies.google.com/privacy&quot;>"/>Privacy Policy<x id="CLOSE_LINK" ctype="x-a" equiv-text="&lt;/a>"/> and <x id="START_LINK_1" equiv-text="&lt;a href=&quot;https://policies.google.com/terms&quot;>"/>Terms of Service<x id="CLOSE_LINK" ctype="x-a" equiv-text="&lt;/a>"/> apply. </source><target state="translated"> 本页面由 reCAPTCHA 保护，并适用于 Google <x id="START_LINK" ctype="x-a" equiv-text="&lt;a href=&quot;https://policies.google.com/privacy&quot;>"/>隐私政策<x id="CLOSE_LINK" ctype="x-a" equiv-text="&lt;/a>"/>和<x id="START_LINK_1" equiv-text="&lt;a href=&quot;https://policies.google.com/terms&quot;>"/>服务条款<x id="CLOSE_LINK" ctype="x-a" equiv-text="&lt;/a>"/>。 </target>
         
       <context-group purpose="location"><context context-type="sourcefile">src/app/module-blueprint/components/user-auth/login-form/login-form.component.html</context><context context-type="linenumber">29</context></context-group><context-group purpose="location"><context context-type="sourcefile">src/app/module-blueprint/components/user-auth/register-form/register-form.component.html</context><context context-type="linenumber">45</context></context-group></trans-unit><trans-unit id="6d3b88a3ae6ff3d987f86395605397ec736dee9c" datatype="html">
-        <source>E-Mail</source><target state="new">E-Mail</target>
+        <source>E-Mail</source><target state="translated">邮箱</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/module-blueprint/components/user-auth/register-form/register-form.component.html</context>
           <context context-type="linenumber">6</context>
         </context-group>
       </trans-unit><trans-unit id="5d8b5b760232125171fec384904fbe31fe27a246" datatype="html">
-        <source>E-Mail is required.</source><target state="new">E-Mail is required.</target>
+        <source>E-Mail is required.</source><target state="translated">未输入邮箱</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/module-blueprint/components/user-auth/register-form/register-form.component.html</context>
           <context context-type="linenumber">9</context>
         </context-group>
       </trans-unit><trans-unit id="7861832b8580f87d1177024e9dc862ab91520b40" datatype="html">
-        <source>E-Mail is not valid.</source><target state="new">E-Mail is not valid.</target>
+        <source>E-Mail is not valid.</source><target state="translated">无效的邮箱地址</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/module-blueprint/components/user-auth/register-form/register-form.component.html</context>
           <context context-type="linenumber">10</context>
         </context-group>
       </trans-unit><trans-unit id="2aaf5d5226159cf9d2995b5f74bd8f3230c417cc" datatype="html">
-        <source>Username is unavailable.</source><target state="new">Username is unavailable.</target>
+        <source>Username is unavailable.</source><target state="translated">用户名不可用</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/module-blueprint/components/user-auth/register-form/register-form.component.html</context>
           <context context-type="linenumber">20</context>
         </context-group>
       </trans-unit><trans-unit id="6053d24275027bf951c8f2c9222d56a54511b43e" datatype="html">
-        <source>Checking username availability...</source><target state="new">Checking username availability...</target>
+        <source>Checking username availability...</source><target state="translated">检查用户名是否可用…</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/module-blueprint/components/user-auth/register-form/register-form.component.html</context>
           <context context-type="linenumber">23</context>
         </context-group>
       </trans-unit><trans-unit id="9f7f412812bba3033c6fa985e95c66dd0bb5fd8a" datatype="html">
-        <source>Username is available</source><target state="new">Username is available</target>
+        <source>Username is available</source><target state="translated">用户名可用</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/module-blueprint/components/user-auth/register-form/register-form.component.html</context>
           <context context-type="linenumber">24</context>
         </context-group>
       </trans-unit><trans-unit id="c1b7e6d75ff4285c7636c67e5ef259629b81725b" datatype="html">
-        <source>Confirm Password</source><target state="new">Confirm Password</target>
+        <source>Confirm Password</source><target state="translated">确认密码</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/module-blueprint/components/user-auth/register-form/register-form.component.html</context>
           <context context-type="linenumber">38</context>
         </context-group>
       </trans-unit><trans-unit id="3aa637996be072a27e8671e2e7ec34ef3be02b65" datatype="html">
-        <source>Passwords must match.</source><target state="new">Passwords must match.</target>
+        <source>Passwords must match.</source><target state="translated">两次密码必须相符</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/module-blueprint/components/user-auth/register-form/register-form.component.html</context>
           <context context-type="linenumber">40</context>
         </context-group>
       </trans-unit><trans-unit id="fc2a69f38c0a4a9a0f9da5d90a746b94aa0e7850" datatype="html">
-        <source>Username or e-mail is already registered</source><target state="new">Username or e-mail is already registered</target>
+        <source>Username or e-mail is already registered</source><target state="translated">该用户名或邮箱已注册</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/module-blueprint/components/user-auth/register-form/register-form.component.html</context>
           <context context-type="linenumber">42</context>

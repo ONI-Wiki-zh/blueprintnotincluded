@@ -49,35 +49,35 @@ TODO Feature List before release :
 })
 export class ComponentBlueprintParentComponent implements OnInit, IObsBlueprintChanged {
 
-  @ViewChild('canvas', {static: true})
+  @ViewChild('canvas', { static: true })
   canvas: ComponentCanvasComponent;
 
-  @ViewChild('buildTool', {static: false})
+  @ViewChild('buildTool', { static: false })
   buildTool: ComponentSideBuildToolComponent;
 
-  @ViewChild('saveDialog', {static: false})
+  @ViewChild('saveDialog', { static: false })
   saveDialog: ComponentSaveDialogComponent;
 
-  @ViewChild('browseDialog', {static: false})
+  @ViewChild('browseDialog', { static: false })
   browseDialog: DialogBrowseComponent;
 
-  @ViewChild('loginDialog', {static: false})
+  @ViewChild('loginDialog', { static: false })
   loginDialog: ComponentLoginDialogComponent;
 
-  @ViewChild('exportImagesDialog', {static: false})
+  @ViewChild('exportImagesDialog', { static: false })
   exportImagesDialog: DialogExportImagesComponent;
 
-  @ViewChild('shareUrlDialog', {static: false})
+  @ViewChild('shareUrlDialog', { static: false })
   shareUrlDialog: DialogShareUrlComponent;
 
   @ViewChild('aboutDialog')
   aboutDialog: DialogAboutComponent;
 
   // The left ui panel is not static, because when in a iframe we don't load it
-  @ViewChild('sidePanelLeft', {static: false})
+  @ViewChild('sidePanelLeft', { static: false })
   sidePanelLeft: ElementRef;
 
-  @ViewChild('selectionTool', {static: false})
+  @ViewChild('selectionTool', { static: false })
   selectionTool: ComponentSideSelectionToolComponent;
 
   constructor(
@@ -89,7 +89,7 @@ export class ComponentBlueprintParentComponent implements OnInit, IObsBlueprintC
     private renderer: Renderer2,
     private http: HttpClient,
     public gameStringService: GameStringService
-    ) {
+  ) {
   }
 
   get showElementReport() {
@@ -149,10 +149,15 @@ export class ComponentBlueprintParentComponent implements OnInit, IObsBlueprintC
         if (params.id != null) this.blueprintService.openBlueprintFromId(params.id);
       });
     })/*
-    .catch((error) => {
-      this.messageService.add({severity:'error', summary:'Error loading database' , detail:error, sticky:true});
-    });*/
-
+      .catch((error) => {
+        this.messageService.add({
+          severity: 'error',
+          summary: $localize`Error loading database`,
+          detail: error,
+          sticky: true
+        });
+      });
+    */
     this.renderer.listen('window', 'load', () => {
       this.resizeTools();
     });
@@ -173,33 +178,74 @@ export class ComponentBlueprintParentComponent implements OnInit, IObsBlueprintC
   }
 
   database: any;
-  fetchDatabase(): Promise<any>
-  {
+  fetchDatabase(): Promise<any> {
     let promise = new Promise((resolve, reject) => {
 
 
-    // Start comment here
-    this.http.get("assets/database/database.zip", {responseType: "arraybuffer"}).subscribe(data => {
-      JSZip.loadAsync(data).then((zipped) => {
-        zipped.files['database.json'].async('text').then(async (text) => {
-          let json = JSON.parse(text);
+      // Start comment here
+      this.http.get("assets/database/database.zip", { responseType: "arraybuffer" }).subscribe(data => {
+        JSZip.loadAsync(data).then((zipped) => {
+          zipped.files['database.json'].async('text').then(async (text) => {
+            let json = JSON.parse(text);
+
+            this.database = json;
+
+            let elements: BuildableElement[] = json.elements;
+            for (const e of elements) {
+              const localizedName = await this.gameStringService.getStr(`STRINGS.ELEMENTS.${e.id.toUpperCase()}.NAME`);
+              if (!localizedName) console.warn(`Missing element translation`, e);
+              e.name = localizedName || e.name
+            }
+            BuildableElement.load(elements);
+
+            let buildMenuCategories: BuildMenuCategory[] = json.buildMenuCategories;
+            for (const bm of buildMenuCategories) {
+              const localizedName = await this.gameStringService.getStr(`STRINGS.UI.BUILDCATEGORIES.${bm.categoryName.toUpperCase()}.NAME`);
+              if (!localizedName) console.warn(`Missing buildMenuCategory translation`, bm);
+              bm.categoryShowName = localizedName || bm.categoryName
+            }
+            BuildMenuCategory.load(buildMenuCategories);
+
+            let buildMenuItems: BuildMenuItem[] = json.buildMenuItems;
+            BuildMenuItem.load(buildMenuItems);
+
+            let uiSprites: BSpriteInfo[] = json.uiSprites;
+            SpriteInfo.load(uiSprites)
+
+            let spriteModifiers: BSpriteModifier[] = json.spriteModifiers;
+            SpriteModifier.load(spriteModifiers);
+
+            let buildings: BBuilding[] = json.buildings;
+            for (const b of buildings) {
+              const localizedName = await this.gameStringService.getStr(`STRINGS.BUILDINGS.PREFABS.${b.prefabId.toUpperCase()}.NAME`);
+              if (!localizedName) console.warn(`Missing building translation`, b);
+              b.name = localizedName
+            }
+            OniItem.load(buildings);
+
+            resolve(0);
+          })
+
+        })
+          .catch((error) => {
+            reject(error);
+          });
+      })
+      // End comment here
+
+
+      /*
+      // Start comment here
+      fetch("/assets/database/database.json")
+        .then(response => { return response.json(); })
+        .then(json => {
 
           this.database = json;
 
           let elements: BuildableElement[] = json.elements;
-          for (const e of elements) {
-            const localizedName = await this.gameStringService.getStr(`STRINGS.ELEMENTS.${e.id.toUpperCase()}.NAME`);
-            if (!localizedName) console.warn(`Missing element translation`, e);
-            e.name = localizedName || e.name
-          }
           BuildableElement.load(elements);
 
           let buildMenuCategories: BuildMenuCategory[] = json.buildMenuCategories;
-          for (const bm of buildMenuCategories) {
-            const localizedName = await this.gameStringService.getStr(`STRINGS.UI.BUILDCATEGORIES.${bm.categoryName.toUpperCase()}.NAME`);
-            if (!localizedName) console.warn(`Missing buildMenuCategory translation`, bm);
-            bm.categoryShowName = localizedName || bm.categoryName
-          }
           BuildMenuCategory.load(buildMenuCategories);
 
           let buildMenuItems: BuildMenuItem[] = json.buildMenuItems;
@@ -212,65 +258,22 @@ export class ComponentBlueprintParentComponent implements OnInit, IObsBlueprintC
           SpriteModifier.load(spriteModifiers);
 
           let buildings: BBuilding[] = json.buildings;
-          for (const b of buildings) {
-            const localizedName = await this.gameStringService.getStr(`STRINGS.BUILDINGS.PREFABS.${b.prefabId.toUpperCase()}.NAME`);
-            if (!localizedName) console.warn(`Missing building translation`, b);
-            b.name = localizedName
-          }
           OniItem.load(buildings);
 
           resolve(0);
-        })
-
       })
       .catch((error) => {
         reject(error);
       });
-    })
-    // End comment here
-
-
-    /*
-    // Start comment here
-    fetch("/assets/database/database.json")
-      .then(response => { return response.json(); })
-      .then(json => {
-
-        this.database = json;
-
-        let elements: BuildableElement[] = json.elements;
-        BuildableElement.load(elements);
-
-        let buildMenuCategories: BuildMenuCategory[] = json.buildMenuCategories;
-        BuildMenuCategory.load(buildMenuCategories);
-
-        let buildMenuItems: BuildMenuItem[] = json.buildMenuItems;
-        BuildMenuItem.load(buildMenuItems);
-
-        let uiSprites: BSpriteInfo[] = json.uiSprites;
-        SpriteInfo.load(uiSprites)
-
-        let spriteModifiers: BSpriteModifier[] = json.spriteModifiers;
-        SpriteModifier.load(spriteModifiers);
-
-        let buildings: BBuilding[] = json.buildings;
-        OniItem.load(buildings);
-
-        resolve(0);
-    })
-    .catch((error) => {
-      reject(error);
-    });
-    // End comment here
-    */
+      // End comment here
+      */
 
     });
 
     return promise;
   }
 
-  menuCommand(menuCommand: MenuCommand)
-  {
+  menuCommand(menuCommand: MenuCommand) {
     if (menuCommand.type == MenuCommandType.newBlueprint) this.blueprintService.newBlueprint();
     else if (menuCommand.type == MenuCommandType.showLoginDialog) this.loginDialog.showDialog();
     else if (menuCommand.type == MenuCommandType.browseBlueprints) this.browseBlueprints(menuCommand.data);
@@ -294,23 +297,30 @@ export class ComponentBlueprintParentComponent implements OnInit, IObsBlueprintC
     this.canvas.saveImages(exportOptions);
   }
 
-  loadTemplateIntoCanvas(template: Blueprint)
-  {
+  loadTemplateIntoCanvas(template: Blueprint) {
     this.canvas.loadNewBlueprint(template);
     CameraService.cameraService.overlay = Overlay.Base;
     this.toolService.changeTool(ToolType.select);
 
-    let summary: string = "Loaded blueprint : " + this.blueprintService.name;
-    let detail: string = template.blueprintItems.length + " items loaded";
-
     // TODO error handling
-    this.messageService.add({severity:'success', summary:summary , detail:detail});
+    this.messageService.add({
+      severity: 'success',
+      summary: $localize`Loaded blueprint: ${this.blueprintService.name}`,
+      detail: $localize`${template.blueprintItems.length} items loaded`,
+    });
   }
 
-  saveBlueprint()
-  {
-    if (!this.authService.isLoggedIn()) this.messageService.add({severity:'error', summary:'Not logged in', detail:'You must be logged in to be able to save blueprints'});
-    else if (this.blueprintService.blueprint.blueprintItems.length == 0) this.messageService.add({severity:'error', summary:'Empty blueprint', detail:'Add some buildings before trying to save'});
+  saveBlueprint() {
+    if (!this.authService.isLoggedIn()) this.messageService.add({
+      severity: 'error',
+      summary: $localize`Not logged in`,
+      detail: $localize`You must be logged in to be able to save blueprints`,
+    });
+    else if (this.blueprintService.blueprint.blueprintItems.length == 0) this.messageService.add({
+      severity: 'error',
+      summary: $localize`Empty blueprint`,
+      detail: $localize`Add some buildings before trying to save`,
+    });
     else {
       this.updateThumbnail();
       this.saveDialog.showDialog();
@@ -318,7 +328,11 @@ export class ComponentBlueprintParentComponent implements OnInit, IObsBlueprintC
   }
 
   exportBlueprint() {
-    if (this.blueprintService.blueprint.blueprintItems.length == 0) this.messageService.add({severity:'error', summary:'Empty blueprint', detail:'Add some buildings before trying to save'});
+    if (this.blueprintService.blueprint.blueprintItems.length == 0) this.messageService.add({
+      severity: 'error',
+      summary: $localize`Empty blueprint`,
+      detail: $localize`Add some buildings before trying to save`,
+    });
     else {
       let friendlyname = "new blueprint";
       if (this.blueprintService.name != undefined) friendlyname = this.blueprintService.name;
@@ -339,7 +353,11 @@ export class ComponentBlueprintParentComponent implements OnInit, IObsBlueprintC
   }
 
   shareUrl() {
-    if (this.blueprintService.id == null) this.messageService.add({severity:'error', summary:'Blueprint not saved', detail:'Save this blueprint to share it with others'});
+    if (this.blueprintService.id == null) this.messageService.add({
+      severity: 'error',
+      summary: $localize`Blueprint not saved`,
+      detail: $localize`Save this blueprint to share it with others`
+    });
     else this.shareUrlDialog.showDialog();
   }
 
@@ -351,7 +369,11 @@ export class ComponentBlueprintParentComponent implements OnInit, IObsBlueprintC
 
   // TODO toast on save and generate url also
   exportImages() {
-    if (this.blueprintService.blueprint.blueprintItems.length == 0) this.messageService.add({severity:'error', summary:'Empty blueprint', detail:'Add some buildings before trying to export images'});
+    if (this.blueprintService.blueprint.blueprintItems.length == 0) this.messageService.add({
+      severity: 'error',
+      summary: $localize`Empty blueprint`,
+      detail: $localize`Add some buildings before trying to export images`
+    });
     else this.exportImagesDialog.showDialog();
   }
 
@@ -359,7 +381,7 @@ export class ComponentBlueprintParentComponent implements OnInit, IObsBlueprintC
     /*
 
     Ui Sprites
-	{
+  {
       "name": "gas_tile_front",
       "uvMin": {
         "x": 0,
@@ -380,7 +402,7 @@ export class ComponentBlueprintParentComponent implements OnInit, IObsBlueprintC
       "isIcon": false,
       "textureName": "gas_tile_front"
     },
-	{
+  {
       "name": "liquid_tile_front",
       "uvMin": {
         "x": 0,
@@ -401,7 +423,7 @@ export class ComponentBlueprintParentComponent implements OnInit, IObsBlueprintC
       "isIcon": false,
       "textureName": "liquid_tile_front"
     },
-	{
+  {
       "name": "vacuum_tile_front",
       "uvMin": {
         "x": 0,
@@ -422,7 +444,7 @@ export class ComponentBlueprintParentComponent implements OnInit, IObsBlueprintC
       "isIcon": false,
       "textureName": "vacuum_tile_front"
     },
-	{
+  {
       "name": "gas_tile",
       "uvMin": {
         "x": 0,
@@ -470,7 +492,7 @@ export class ComponentBlueprintParentComponent implements OnInit, IObsBlueprintC
         27
       ]
     },
-	{
+  {
       "name": "gas_tile_front",
       "type": 0,
       "spriteInfoName": "gas_tile_front",
@@ -493,7 +515,7 @@ export class ComponentBlueprintParentComponent implements OnInit, IObsBlueprintC
         28
       ]
     },
-	{
+  {
       "name": "liquid_tile_front",
       "type": 0,
       "spriteInfoName": "liquid_tile_front",
@@ -516,7 +538,7 @@ export class ComponentBlueprintParentComponent implements OnInit, IObsBlueprintC
         30
       ]
     },
-	{
+  {
       "name": "vacuum_tile_front",
       "type": 0,
       "spriteInfoName": "liquid_tile_front",

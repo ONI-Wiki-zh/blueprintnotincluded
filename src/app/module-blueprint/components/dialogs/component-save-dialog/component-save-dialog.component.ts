@@ -70,7 +70,7 @@ export class ComponentSaveDialogComponent implements OnInit {
       this.hideDialog();
 
       // TODO move this to the service ?
-      let summary: string = this.blueprintService.name + ' saved';
+      let summary: string = $localize`${this.blueprintService.name} saved` ;
       let detail: string = '';
 
       this.messageService.add({severity:'success', summary:summary , detail:detail});
@@ -81,7 +81,10 @@ export class ComponentSaveDialogComponent implements OnInit {
   handleSaveError()
   {
     this.hideDialog();
-    this.messageService.add({severity:'error', summary:'Error saving blueprint'});
+    this.messageService.add({
+      severity: 'error',
+      summary: $localize`Error saving blueprint`,
+    });
     this.working = false;
   }
 

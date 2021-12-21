@@ -54,8 +54,7 @@ export class ComponentMenuComponent implements OnInit, IObsToolChanged, IObsCame
     private toolService: ToolService,
     private blueprintService: BlueprintService,
     private router: Router,
-    @Inject(LOCALE_ID) private locale: string)
-  {
+    @Inject(LOCALE_ID) private locale: string) {
     this.toolService.subscribeToolChanged(this);
     this.cameraService = CameraService.cameraService;
     this.cameraService.subscribeCameraChange(this);
@@ -72,41 +71,41 @@ export class ComponentMenuComponent implements OnInit, IObsToolChanged, IObsCame
 
   ngOnInit() {
 
-    let overlayList: {id:Overlay, name: string}[] = [
-      {id: Overlay.Base, name: $localize`:overlay switch on the menu:Buildings`},
-      {id: Overlay.Power, name: $localize`:overlay switch on the menu:Power`},
-      {id: Overlay.Liquid, name: $localize`:overlay switch on the menu:Plumbing`},
-      {id: Overlay.Gas, name: $localize`:overlay switch on the menu:Ventilation`},
-      {id: Overlay.Automation, name: $localize`:overlay switch on the menu:Automation`},
-      {id: Overlay.Conveyor, name: $localize`:overlay switch on the menu:Shipment`}
+    let overlayList: { id: Overlay, name: string }[] = [
+      { id: Overlay.Base, name: $localize`:overlay switch on the menu:Buildings` },
+      { id: Overlay.Power, name: $localize`:overlay switch on the menu:Power` },
+      { id: Overlay.Liquid, name: $localize`:overlay switch on the menu:Plumbing` },
+      { id: Overlay.Gas, name: $localize`:overlay switch on the menu:Ventilation` },
+      { id: Overlay.Automation, name: $localize`:overlay switch on the menu:Automation` },
+      { id: Overlay.Conveyor, name: $localize`:overlay switch on the menu:Shipment` }
     ]
     this.overlayMenuItems = [];
     overlayList.map((overlay) => {
       this.overlayMenuItems.push({
         label: overlay.name,
-        id:overlay.id.toString(),
+        id: overlay.id.toString(),
         command: (event) => { this.clickOverlay(event); }
       })
     });
 
     this.displayMenuItems = [];
-    this.displayMenuItems.push({label: $localize`Blueprint`,  id:Display.blueprint.toString(),  command: (event) => { this.clickDisplay(event); }});
-    this.displayMenuItems.push({label: $localize`Color`,      id:Display.solid.toString(),      command: (event) => { this.clickDisplay(event); }});
+    this.displayMenuItems.push({ label: $localize`Blueprint`, id: Display.blueprint.toString(), command: (event) => { this.clickDisplay(event); } });
+    this.displayMenuItems.push({ label: $localize`Color`, id: Display.solid.toString(), command: (event) => { this.clickDisplay(event); } });
 
     this.visualizationMenuItems = [];
-    this.visualizationMenuItems.push({label: $localize`None`,         id:Visualization.none.toString(),         command: (event) => { this.clickVisualization(event); }});
-    this.visualizationMenuItems.push({label: $localize`Temperature`,  id:Visualization.temperature.toString(),  command: (event) => { this.clickVisualization(event); }});
-    this.visualizationMenuItems.push({label: $localize`Elements`,     id:Visualization.elements.toString(),     command: (event) => { this.clickVisualization(event); }});
+    this.visualizationMenuItems.push({ label: $localize`None`, id: Visualization.none.toString(), command: (event) => { this.clickVisualization(event); } });
+    this.visualizationMenuItems.push({ label: $localize`Temperature`, id: Visualization.temperature.toString(), command: (event) => { this.clickVisualization(event); } });
+    this.visualizationMenuItems.push({ label: $localize`Elements`, id: Visualization.elements.toString(), command: (event) => { this.clickVisualization(event); } });
 
     this.toolMenuItems = [
-      {label: $localize`Select`,         id:ToolType[ToolType.select],        command: (event) => { this.clickTool(ToolType.select); }},
-      {label: $localize`Build`,          id:ToolType[ToolType.build],         command: (event) => { this.clickTool(ToolType.build); }},
+      { label: $localize`Select`, id: ToolType[ToolType.select], command: (event) => { this.clickTool(ToolType.select); } },
+      { label: $localize`Build`, id: ToolType[ToolType.build], command: (event) => { this.clickTool(ToolType.build); } },
     ];
 
     this.languagesMenuItems = [];
     for (const lang of ALL_LANGUAGES) {
       if (lang.code === this.locale) continue;
-      this.languagesMenuItems.push({label: lang.name, url: (this.locale === 'en-US' ? '/' : '/../') + lang.code});
+      this.languagesMenuItems.push({ label: lang.name, url: (this.locale === 'en-US' ? '/' : '/../') + lang.code });
     }
 
     this.menuItems = [
@@ -114,26 +113,30 @@ export class ComponentMenuComponent implements OnInit, IObsToolChanged, IObsCame
         id: 'blueprint',
         label: $localize`Blueprint`,
         items: [
-          {label: $localize`New`, icon:'pi pi-plus', command: (event) => { this.onMenuCommand.emit({type: MenuCommandType.newBlueprint, data: null}); } },
-          {id: 'save', label: $localize`Save`, icon:'pi pi-save', command: (event) => { this.onMenuCommand.emit({type: MenuCommandType.saveBlueprint, data: null}); } },
-          {label: $localize`Upload`, icon:'pi pi-upload', items:[
-            {label: $localize`Game (yaml)`, command: (event) => { this.uploadYamlTemplate(); } },
-            {label: $localize`Blueprint (json)`, command: (event) => { this.uploadJsonTemplate(); } },
-            {label: $localize`Blueprint (binary)`, command: (event) => { this.uploadBsonTemplate(); } }
-          ]},
-          {label: $localize`Download`, icon:'pi pi-download', items:[
-            {label: $localize`Blueprint (json)`, command: (event) => { this.onMenuCommand.emit({type: MenuCommandType.exportBlueprint, data: null}); } }
-          ]},
-          {label: $localize`Browse`, icon:'pi pi-search', command: (event) => { this.onMenuCommand.emit({type: MenuCommandType.browseBlueprints, data: null}); } },
-          {label: $localize`Get shareable Url`, icon:'pi pi-share-alt', command: (event) => { this.onMenuCommand.emit({type: MenuCommandType.getShareableUrl, data: null}); } },
-          {label: $localize`Export images`, icon:'pi pi-images', command: (event) => { this.onMenuCommand.emit({type: MenuCommandType.exportImages, data: null}); } }
+          { label: $localize`New`, icon: 'pi pi-plus', command: (event) => { this.onMenuCommand.emit({ type: MenuCommandType.newBlueprint, data: null }); } },
+          { id: 'save', label: $localize`Save`, icon: 'pi pi-save', command: (event) => { this.onMenuCommand.emit({ type: MenuCommandType.saveBlueprint, data: null }); } },
+          {
+            label: $localize`Upload`, icon: 'pi pi-upload', items: [
+              { label: $localize`Game (yaml)`, command: (event) => { this.uploadYamlTemplate(); } },
+              { label: $localize`Blueprint (json)`, command: (event) => { this.uploadJsonTemplate(); } },
+              { label: $localize`Blueprint (binary)`, command: (event) => { this.uploadBsonTemplate(); } }
+            ]
+          },
+          {
+            label: $localize`Download`, icon: 'pi pi-download', items: [
+              { label: $localize`Blueprint (json)`, command: (event) => { this.onMenuCommand.emit({ type: MenuCommandType.exportBlueprint, data: null }); } }
+            ]
+          },
+          { label: $localize`Browse`, icon: 'pi pi-search', command: (event) => { this.onMenuCommand.emit({ type: MenuCommandType.browseBlueprints, data: null }); } },
+          { label: $localize`Get shareable Url`, icon: 'pi pi-share-alt', command: (event) => { this.onMenuCommand.emit({ type: MenuCommandType.getShareableUrl, data: null }); } },
+          { label: $localize`Export images`, icon: 'pi pi-images', command: (event) => { this.onMenuCommand.emit({ type: MenuCommandType.exportImages, data: null }); } }
         ]
       },
       {
         label: $localize`Edit`,
         items: [
-          {label: $localize`Undo`, icon:'pi pi-undo',    command: (event) => { this.blueprintService.undo(); } },
-          {label: $localize`Redo`, icon:'pi pi-replay',  command: (event) => { this.blueprintService.redo(); } },
+          { label: $localize`Undo`, icon: 'pi pi-undo', command: (event) => { this.blueprintService.undo(); } },
+          { label: $localize`Redo`, icon: 'pi pi-replay', command: (event) => { this.blueprintService.redo(); } },
         ]
       },
       {
@@ -154,24 +157,24 @@ export class ComponentMenuComponent implements OnInit, IObsToolChanged, IObsCame
       },
       {
         label: $localize`More`,
-        items : [
+        items: [
           {
             label: $localize`About`,
-            icon:'pi pi-info-circle', command: (event) => { this.onMenuCommand.emit({type: MenuCommandType.about, data: null}); }
+            icon: 'pi pi-info-circle', command: (event) => { this.onMenuCommand.emit({ type: MenuCommandType.about, data: null }); }
           },
           {
             label: $localize`Discord`,
-            icon:'fab fa-discord', url:'https://discord.gg/69vRZZT', target:'discord'
+            icon: 'fab fa-discord', url: 'https://discord.gg/69vRZZT', target: 'discord'
           },
           {
             label: $localize`Github`,
-            icon:'fab fa-github', url:'https://github.com/simonlourson/blueprintnotincluded/', target:'github'
+            icon: 'fab fa-github', url: 'https://github.com/simonlourson/blueprintnotincluded/', target: 'github'
           },
         ]
       },
       {
         label: ALL_LANGUAGES.find(l => l.code === this.locale)?.name || this.locale,
-        items : this.languagesMenuItems
+        items: this.languagesMenuItems
       },
 
       /*
@@ -190,9 +193,9 @@ export class ComponentMenuComponent implements OnInit, IObsToolChanged, IObsCame
       */
     ];
 
-    this.clickOverlay({item:{id:Overlay.Base}});
-    this.clickDisplay({item:{id:Display.solid}});
-    this.clickVisualization({item:{id:Visualization.none}});
+    this.clickOverlay({ item: { id: Overlay.Base } });
+    this.clickDisplay({ item: { id: Display.solid } });
+    this.clickVisualization({ item: { id: Visualization.none } });
     this.clickTool(ToolType.select);
   }
 
@@ -200,19 +203,16 @@ export class ComponentMenuComponent implements OnInit, IObsToolChanged, IObsCame
     this.updateToolIcon();
   }
 
-  updateToolIcon()
-  {
-    for (let menuItem of this.toolMenuItems)
-    {
-      if(!menuItem.separator) {
+  updateToolIcon() {
+    for (let menuItem of this.toolMenuItems) {
+      if (!menuItem.separator) {
         if (this.toolService.getTool(ToolType[menuItem.id]).visible) menuItem.icon = 'pi pi-fw pi-check';
         else menuItem.icon = 'pi pi-fw pi-none';
       }
     }
   }
 
-  clickTool(toolType: ToolType)
-  {
+  clickTool(toolType: ToolType) {
     this.toolService.changeTool(toolType);
   }
 
@@ -223,7 +223,7 @@ export class ComponentMenuComponent implements OnInit, IObsToolChanged, IObsCame
       getDuplicates: true
     }
 
-    this.onMenuCommand.emit({type: MenuCommandType.browseBlueprints, data: userFilter});
+    this.onMenuCommand.emit({ type: MenuCommandType.browseBlueprints, data: userFilter });
   }
 
   cameraChanged(camera: CameraService) {
@@ -232,100 +232,88 @@ export class ComponentMenuComponent implements OnInit, IObsToolChanged, IObsCame
     this.updateDisplayIcon(camera.display);
   }
 
-  updateOverlayIcon(overlay: Overlay)
-  {
-    for (let menuItem of this.overlayMenuItems)
-    {
-      if (menuItem.id == overlay.toString()) {menuItem.icon = 'pi pi-fw pi-check';}
+  updateOverlayIcon(overlay: Overlay) {
+    for (let menuItem of this.overlayMenuItems) {
+      if (menuItem.id == overlay.toString()) { menuItem.icon = 'pi pi-fw pi-check'; }
       else menuItem.icon = 'pi pi-fw pi-none';
     }
   }
 
   updateDisplayIcon(display: Display) {
-    for (let menuItem of this.displayMenuItems)
-    {
-      if (menuItem.id == display.toString()) {menuItem.icon = 'pi pi-fw pi-check';}
+    for (let menuItem of this.displayMenuItems) {
+      if (menuItem.id == display.toString()) { menuItem.icon = 'pi pi-fw pi-check'; }
       else menuItem.icon = 'pi pi-fw pi-none';
     }
   }
 
   updateVisualizationIcon(visualization: Visualization) {
-    for (let menuItem of this.visualizationMenuItems)
-    {
-      if (menuItem.id == visualization.toString()) {menuItem.icon = 'pi pi-fw pi-check';}
+    for (let menuItem of this.visualizationMenuItems) {
+      if (menuItem.id == visualization.toString()) { menuItem.icon = 'pi pi-fw pi-check'; }
       else menuItem.icon = 'pi pi-fw pi-none';
     }
   }
 
-  clickOverlay(event: any)
-  {
+  clickOverlay(event: any) {
     this.cameraService.overlay = (event.item.id as Overlay);
   }
 
-  clickDisplay(event: any)
-  {
+  clickDisplay(event: any) {
     this.cameraService.display = (event.item.id as Display);
   }
 
-  clickVisualization(event: any)
-  {
+  clickVisualization(event: any) {
     this.cameraService.visualization = (event.item.id as Visualization);
   }
 
-  uploadYamlTemplate()
-  {
+  uploadYamlTemplate() {
     let fileElem = document.getElementById("fileChooser") as HTMLInputElement;
     fileElem.click();
   }
 
-  uploadJsonTemplate()
-  {
+  uploadJsonTemplate() {
     let fileElem = document.getElementById("fileChooserJson") as HTMLInputElement;
     fileElem.click();
   }
 
-  uploadBsonTemplate()
-  {
+  uploadBsonTemplate() {
     let fileElem = document.getElementById("fileChooserBson") as HTMLInputElement;
     fileElem.click();
   }
 
-  templateUpload(event: any)
-  {
+  templateUpload(event: any) {
     let fileElem = document.getElementById("fileChooser") as HTMLInputElement;
     this.blueprintService.openBlueprintFromUpload(BlueprintFileType.YAML, fileElem.files);
     fileElem.value = '';
   }
 
-  templateUploadJson(event: any)
-  {
+  templateUploadJson(event: any) {
     let fileElem = document.getElementById("fileChooserJson") as HTMLInputElement;
     this.blueprintService.openBlueprintFromUpload(BlueprintFileType.JSON, fileElem.files);
     fileElem.value = '';
   }
 
-  templateUploadBson(event: any)
-  {
+  templateUploadBson(event: any) {
     let fileElem = document.getElementById("fileChooserBson") as HTMLInputElement;
     this.blueprintService.openBlueprintFromUpload(BlueprintFileType.BSON, fileElem.files);
     fileElem.value = '';
   }
 
-  login()
-  {
-    this.onMenuCommand.emit({type: MenuCommandType.showLoginDialog, data: null});
+  login() {
+    this.onMenuCommand.emit({ type: MenuCommandType.showLoginDialog, data: null });
   }
 
-  logout()
-  {
+  logout() {
     this.authService.logout();
-    this.messageService.add({severity:'success', summary:'Logout Successful', detail:null});
+    this.messageService.add({
+      severity: 'success',
+      summary: $localize`Logout Successful`,
+      detail: null
+    });
   }
 
 }
 
-export enum MenuCommandType
-{
+export enum MenuCommandType {
   newBlueprint,
   uploadBlueprint,
   uploadYaml,
@@ -350,8 +338,7 @@ export enum MenuCommandType
   showLoginDialog
 }
 
-export class MenuCommand
-{
+export class MenuCommand {
   type: MenuCommandType;
   data: any;
 }

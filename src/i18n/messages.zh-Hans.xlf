@@ -15,31 +15,31 @@
           <context context-type="linenumber">71</context>
         </context-group>
       </trans-unit><trans-unit id="4754074883891372294" datatype="html">
-        <source>Loaded blueprint: <x id="PH" equiv-text="this.blueprintService.name"/></source><target state="new">Loaded blueprint: <x id="PH" equiv-text="this.blueprintService.name"/></target>
+        <source>Loaded blueprint: <x id="PH" equiv-text="this.blueprintService.name"/></source><target state="translated">加载蓝图：<x id="PH" equiv-text="this.blueprintService.name"/></target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/module-blueprint/components/component-blueprint-parent/component-blueprint-parent.component.ts</context>
           <context context-type="linenumber">308</context>
         </context-group>
       </trans-unit><trans-unit id="7054073769904641551" datatype="html">
-        <source><x id="PH" equiv-text="template.blueprintItems.length"/> items loaded</source><target state="new"><x id="PH" equiv-text="template.blueprintItems.length"/> items loaded</target>
+        <source><x id="PH" equiv-text="template.blueprintItems.length"/> items loaded</source><target state="translated">已载入<x id="PH" equiv-text="template.blueprintItems.length"/> 个项目</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/module-blueprint/components/component-blueprint-parent/component-blueprint-parent.component.ts</context>
           <context context-type="linenumber">309</context>
         </context-group>
       </trans-unit><trans-unit id="7854578989283397034" datatype="html">
-        <source>Not logged in</source><target state="new">Not logged in</target>
+        <source>Not logged in</source><target state="translated">尚未登录</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/module-blueprint/components/component-blueprint-parent/component-blueprint-parent.component.ts</context>
           <context context-type="linenumber">316</context>
         </context-group>
       </trans-unit><trans-unit id="3669452499212372649" datatype="html">
-        <source>You must be logged in to be able to save blueprints</source><target state="new">You must be logged in to be able to save blueprints</target>
+        <source>You must be logged in to be able to save blueprints</source><target state="translated">登录后才能保存蓝图</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/module-blueprint/components/component-blueprint-parent/component-blueprint-parent.component.ts</context>
           <context context-type="linenumber">317</context>
         </context-group>
       </trans-unit><trans-unit id="7686566390568529651" datatype="html">
-        <source>Empty blueprint</source><target state="new">Empty blueprint</target>
+        <source>Empty blueprint</source><target state="translated">空蓝图</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/module-blueprint/components/component-blueprint-parent/component-blueprint-parent.component.ts</context>
           <context context-type="linenumber">321</context>
@@ -53,7 +53,7 @@
           <context context-type="linenumber">374</context>
         </context-group>
       </trans-unit><trans-unit id="148605656880584483" datatype="html">
-        <source>Add some buildings before trying to save</source><target state="new">Add some buildings before trying to save</target>
+        <source>Add some buildings before trying to save</source><target state="translated">请添加一些建筑再尝试保存</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/module-blueprint/components/component-blueprint-parent/component-blueprint-parent.component.ts</context>
           <context context-type="linenumber">322</context>
@@ -63,19 +63,19 @@
           <context context-type="linenumber">334</context>
         </context-group>
       </trans-unit><trans-unit id="3496172656658623147" datatype="html">
-        <source>Blueprint not saved</source><target state="new">Blueprint not saved</target>
+        <source>Blueprint not saved</source><target state="translated">蓝图未保存</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/module-blueprint/components/component-blueprint-parent/component-blueprint-parent.component.ts</context>
           <context context-type="linenumber">358</context>
         </context-group>
       </trans-unit><trans-unit id="5920762637805253446" datatype="html">
-        <source>Save this blueprint to share it with others</source><target state="new">Save this blueprint to share it with others</target>
+        <source>Save this blueprint to share it with others</source><target state="translated">保存后才能分享蓝图</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/module-blueprint/components/component-blueprint-parent/component-blueprint-parent.component.ts</context>
           <context context-type="linenumber">359</context>
         </context-group>
       </trans-unit><trans-unit id="1281457944193208248" datatype="html">
-        <source>Add some buildings before trying to export images</source><target state="new">Add some buildings before trying to export images</target>
+        <source>Add some buildings before trying to export images</source><target state="translated">请添加一些建筑再尝试导出图片</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/module-blueprint/components/component-blueprint-parent/component-blueprint-parent.component.ts</context>
           <context context-type="linenumber">375</context>
@@ -270,7 +270,7 @@
         
         
       <context-group purpose="location"><context context-type="sourcefile">src/app/module-blueprint/components/component-menu/component-menu.component.ts</context><context context-type="linenumber">170</context></context-group></trans-unit><trans-unit id="8311146654709043384" datatype="html">
-        <source>Logout Successful</source><target state="new">Logout Successful</target>
+        <source>Logout Successful</source><target state="translated">登出成功</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/module-blueprint/components/component-menu/component-menu.component.ts</context>
           <context context-type="linenumber">309</context>
@@ -288,7 +288,7 @@
           <context context-type="linenumber">18</context>
         </context-group>
       </trans-unit><trans-unit id="9a5b6fb356b275f56cae4490d6469357099f6235" datatype="html">
-        <source>Blueprint name is required.</source><target state="translated">需要输入蓝图名</target>
+        <source>Blueprint name is required.</source><target state="translated">蓝图名不能为空</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/module-blueprint/components/dialogs/component-save-dialog/component-save-dialog.component.html</context>
           <context context-type="linenumber">21</context>
@@ -337,13 +337,13 @@
         </context-group>
         <note priority="1" from="description">saveLabel</note>
       </trans-unit><trans-unit id="6619888220476106019" datatype="html">
-        <source><x id="PH" equiv-text="this.blueprintService.name"/> saved</source><target state="new"><x id="PH" equiv-text="this.blueprintService.name"/> saved</target>
+        <source><x id="PH" equiv-text="this.blueprintService.name"/> saved</source><target state="translated"><x id="PH" equiv-text="this.blueprintService.name"/> 已保存</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/module-blueprint/components/dialogs/component-save-dialog/component-save-dialog.component.ts</context>
           <context context-type="linenumber">73</context>
         </context-group>
       </trans-unit><trans-unit id="3323859665921885692" datatype="html">
-        <source>Error saving blueprint</source><target state="new">Error saving blueprint</target>
+        <source>Error saving blueprint</source><target state="translated">保存蓝图时遇到错误</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/module-blueprint/components/dialogs/component-save-dialog/component-save-dialog.component.ts</context>
           <context context-type="linenumber">86</context>
@@ -355,7 +355,7 @@
           <context context-type="linenumber">3</context>
         </context-group>
       </trans-unit><trans-unit id="95b2fb3dace7db1508dfe37b6f97079a21f7da57" datatype="html">
-        <source>What is this website ?</source><target state="translated">这是哪里？</target>
+        <source>What is this website ?</source><target state="translated">这是什么网站？</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/module-blueprint/components/dialogs/dialog-about/dialog-about.component.html</context>
           <context context-type="linenumber">9</context>
@@ -468,7 +468,7 @@
         <source>Search</source><target state="translated">搜索</target>
         
       <context-group purpose="location"><context context-type="sourcefile">src/app/module-blueprint/components/dialogs/dialog-browse/dialog-browse.component.html</context><context context-type="linenumber">16</context></context-group><context-group purpose="location"><context context-type="sourcefile">src/app/module-blueprint/components/side-bar/cell-element-picker/cell-element-picker.component.html</context><context context-type="linenumber">3</context></context-group></trans-unit><trans-unit id="0a01865a678d512fe065eb16a14eaf792d2aa19d" datatype="html">
-        <source>Show duplicate blueprints</source><target state="translated">显示复制蓝图</target>
+        <source>Show duplicate blueprints</source><target state="translated">显示重复蓝图</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/module-blueprint/components/dialogs/dialog-browse/dialog-browse.component.html</context>
           <context context-type="linenumber">23</context>
@@ -517,7 +517,7 @@
         </context-group>
         <note priority="1" from="description">nothingBlueprintItem.name</note>
       </trans-unit><trans-unit id="adf785f6ae69c0bdaeb629c5f090acdcda8f7832" datatype="html">
-        <source>Export options</source><target state="new">Export options</target>
+        <source>Export options</source><target state="translated">导出选项</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/module-blueprint/components/dialogs/dialog-export-images/dialog-export-images.component.html</context>
           <context context-type="linenumber">2</context>
@@ -547,13 +547,13 @@
           <context context-type="linenumber">38</context>
         </context-group>
       </trans-unit><trans-unit id="4873548802925928700" datatype="html">
-        <source><x id="PH" equiv-text="px"/> pixels per tile</source><target state="new"><x id="PH" equiv-text="px"/> pixels per tile</target>
+        <source><x id="PH" equiv-text="px"/> pixels per tile</source><target state="translated"><x id="PH" equiv-text="px"/> 像素每格</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/module-blueprint/components/dialogs/dialog-export-images/dialog-export-images.component.ts</context>
           <context context-type="linenumber">36</context>
         </context-group>
       </trans-unit><trans-unit id="b3bb50d45f56bb9206171cfa319656df41de8373" datatype="html">
-        <source>Get shareable url</source><target state="new">Get shareable url</target>
+        <source>Get shareable url</source><target state="translated">获取分享用 URL</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/module-blueprint/components/dialogs/dialog-share-url/dialog-share-url.component.html</context>
           <context context-type="linenumber">2</context>
@@ -577,13 +577,13 @@
           <context context-type="linenumber">16</context>
         </context-group>
       </trans-unit><trans-unit id="306803540187586784" datatype="html">
-        <source>Shareable url copied</source><target state="new">Shareable url copied</target>
+        <source>Shareable url copied</source><target state="translated">URL 已复制</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/module-blueprint/components/dialogs/dialog-share-url/dialog-share-url.component.ts</context>
           <context context-type="linenumber">39</context>
         </context-group>
       </trans-unit><trans-unit id="6598065843481646588" datatype="html">
-        <source>Paste it into a new tab to try it!</source><target state="new">Paste it into a new tab to try it!</target>
+        <source>Paste it into a new tab to try it!</source><target state="translated">粘贴到新标签页的网址栏以查看效果！</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/module-blueprint/components/dialogs/dialog-share-url/dialog-share-url.component.ts</context>
           <context context-type="linenumber">40</context>
@@ -785,13 +785,13 @@
         <source> This site is protected by reCAPTCHA and the Google <x id="START_LINK" ctype="x-a" equiv-text="&lt;a href=&quot;https://policies.google.com/privacy&quot;>"/>Privacy Policy<x id="CLOSE_LINK" ctype="x-a" equiv-text="&lt;/a>"/> and <x id="START_LINK_1" equiv-text="&lt;a href=&quot;https://policies.google.com/terms&quot;>"/>Terms of Service<x id="CLOSE_LINK" ctype="x-a" equiv-text="&lt;/a>"/> apply. </source><target state="translated"> 本页面由 reCAPTCHA 保护，并适用于 Google <x id="START_LINK" ctype="x-a" equiv-text="&lt;a href=&quot;https://policies.google.com/privacy&quot;>"/>隐私政策<x id="CLOSE_LINK" ctype="x-a" equiv-text="&lt;/a>"/>和<x id="START_LINK_1" equiv-text="&lt;a href=&quot;https://policies.google.com/terms&quot;>"/>服务条款<x id="CLOSE_LINK" ctype="x-a" equiv-text="&lt;/a>"/>。 </target>
         
       <context-group purpose="location"><context context-type="sourcefile">src/app/module-blueprint/components/user-auth/login-form/login-form.component.html</context><context context-type="linenumber">29</context></context-group><context-group purpose="location"><context context-type="sourcefile">src/app/module-blueprint/components/user-auth/register-form/register-form.component.html</context><context context-type="linenumber">45</context></context-group></trans-unit><trans-unit id="1937624263066950344" datatype="html">
-        <source>Login Successful</source><target state="new">Login Successful</target>
+        <source>Login Successful</source><target state="translated">登录成功</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/module-blueprint/components/user-auth/login-form/login-form.component.ts</context>
           <context context-type="linenumber">74</context>
         </context-group>
       </trans-unit><trans-unit id="464930630571103874" datatype="html">
-        <source>Welcome <x id="PH" equiv-text="username"/></source><target state="new">Welcome <x id="PH" equiv-text="username"/></target>
+        <source>Welcome <x id="PH" equiv-text="username"/></source><target state="translated">欢迎，<x id="PH" equiv-text="username"/></target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/module-blueprint/components/user-auth/login-form/login-form.component.ts</context>
           <context context-type="linenumber">75</context>
@@ -807,7 +807,7 @@
           <context context-type="linenumber">6</context>
         </context-group>
       </trans-unit><trans-unit id="5d8b5b760232125171fec384904fbe31fe27a246" datatype="html">
-        <source>E-Mail is required.</source><target state="translated">未输入邮箱</target>
+        <source>E-Mail is required.</source><target state="translated">邮箱不能为空</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/module-blueprint/components/user-auth/register-form/register-form.component.html</context>
           <context context-type="linenumber">9</context>
@@ -855,7 +855,7 @@
           <context context-type="linenumber">42</context>
         </context-group>
       </trans-unit><trans-unit id="3837098266386311988" datatype="html">
-        <source>Registration Successful</source><target state="new">Registration Successful</target>
+        <source>Registration Successful</source><target state="translated">注册成功</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/module-blueprint/components/user-auth/register-form/register-form.component.ts</context>
           <context context-type="linenumber">83</context>

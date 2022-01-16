@@ -12,7 +12,7 @@ import { CameraService, DrawHelpers, Vector2, Overlay } from '../../../../../../
 export class DialogExportImagesComponent implements OnInit {
 
   blueprintSize: Vector2;
-  
+
   visible: boolean = false;
 
   pixelPerTile: SelectItem[];
@@ -20,7 +20,7 @@ export class DialogExportImagesComponent implements OnInit {
 
   exportOptions: ExportImageOptions;
 
-  get disabled() { return !(this.exportOptions.selectedOverlays.length>0) }
+  get disabled() { return !(this.exportOptions.selectedOverlays.length > 0) }
 
   @Output() onSaveImages = new EventEmitter<ExportImageOptions>();
 
@@ -29,23 +29,15 @@ export class DialogExportImagesComponent implements OnInit {
 
   private cameraService: CameraService
 
-  constructor(private blueprintService: BlueprintService) { 
+  constructor(private blueprintService: BlueprintService) {
 
     this.cameraService = CameraService.cameraService;
-
-    this.pixelPerTile = [
-      {label:'16 pixels per tile', value:16},
-      {label:'24 pixels per tile', value:24},
-      {label:'32 pixels per tile', value:32},
-      {label:'48 pixels per tile', value:48},
-      {label:'64 pixels per tile', value:64},
-      {label:'96 pixels per tile', value:96},
-      {label:'128 pixels per tile', value:128}
-    ];
+    this.pixelPerTile = [16, 24, 32, 48, 64, 96, 128,]
+      .map(px => ({ label: $localize`${px} pixels per tile`, value: px }))
 
     this.exportOptions = {
       //selectedOverlays: [Overlay.Base],
-      selectedOverlays:[
+      selectedOverlays: [
         Overlay.Base,
         Overlay.Power,
         Overlay.Liquid,
@@ -55,7 +47,7 @@ export class DialogExportImagesComponent implements OnInit {
       ],
       pixelsPerTile: this.pixelPerTile[2].value,
       gridLines: false
-    }  
+    }
   }
 
   ngOnInit() {
@@ -70,7 +62,7 @@ export class DialogExportImagesComponent implements OnInit {
 
     this.overlayOptions = [];
     overlayList.map((overlay) => {
-      this.overlayOptions.push({label: DrawHelpers.overlayString[overlay], value: overlay});
+      this.overlayOptions.push({ label: DrawHelpers.overlayString[overlay], value: overlay });
     });
 
 
@@ -93,8 +85,7 @@ export class DialogExportImagesComponent implements OnInit {
     this.visible = false;
   }
 
-  showDialog()
-  {
+  showDialog() {
     this.visible = true;
 
     let boundingBox = this.blueprintService.blueprint.getBoundingBox();

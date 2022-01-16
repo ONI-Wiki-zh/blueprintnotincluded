@@ -1,22 +1,24 @@
 <canvas #blueprintCanvas
   id="blueprintCanvas"
-  
+
   tabindex="0"
 
-  dragAndDrop 
+  i18n
+
+  dragAndDrop
     (myMouseDrag)="mouseDrag($event)"
     (myMouseStopDrag)="mouseStopDrag($event)"
-    (myMouseMove)="mouseMove($event)" 
+    (myMouseMove)="mouseMove($event)"
     (myMouseClick)="mouseClick($event)"
     (myMouseUp)="mouseUp($event)"
     (myMouseDown)="mouseDown($event)"
     (myMouseOut)="mouseOut($event)"
-  mouseWheel 
+  mouseWheel
     (mouseWheel)="mouseWheel($event)"
-  keyEvents 
+  keyEvents
     (keyPress)="keyPress($event)">
-    
-  Your browser does not support canvas. 
+
+  Your browser does not support canvas.
 
 </canvas>
 

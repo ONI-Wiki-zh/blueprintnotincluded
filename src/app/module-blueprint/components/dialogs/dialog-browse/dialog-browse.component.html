@@ -1,28 +1,28 @@
-<p-dialog #browseDialog 
-  header='Browse Blueprints' 
+<p-dialog #browseDialog
+  i18n-header header='Browse Blueprints'
   [(visible)]="visible"
-  [modal]="true" 
+  [modal]="true"
   [dismissableMask]="true"
-  [closable]="true" 
-  [focusOnShow]="false" 
-  [maximizable]="false" 
-  [draggable]="false" 
+  [closable]="true"
+  [focusOnShow]="false"
+  [maximizable]="false"
+  [draggable]="false"
   [resizable]="false"
   [contentStyle]=""
   >
-  
+
   <div>
-    <input class="float-input" type="text" size="30" 
-      placeholder="Search"
-      [(ngModel)]="filterName" 
-      (ngModelChange)="filterNameSubject.next($event)" pInputText > 
+    <input class="float-input" type="text" size="30"
+      i18n-placeholder placeholder="Search"
+      [(ngModel)]="filterName"
+      (ngModelChange)="filterNameSubject.next($event)" pInputText >
   </div>
 
-    
-  
-  <p-checkbox [(ngModel)]="getDuplicates" binary="true" label="Show duplicate blueprints" (onChange)="duplicateChange()"></p-checkbox>
+
+
+  <p-checkbox [(ngModel)]="getDuplicates" binary="true" i18n-label label="Show duplicate blueprints" (onChange)="duplicateChange()"></p-checkbox>
   <br>
-  <p-checkbox *ngIf="filterUserName != null" [(ngModel)]="filterUser" binary="true" label="Show only blueprints by {{filterUserName}}" (onChange)="filterUserChange()"></p-checkbox>
+  <p-checkbox *ngIf="filterUserName != null" [(ngModel)]="filterUser" binary="true" i18n-label label="Show only blueprints by {{filterUserName}}" (onChange)="filterUserChange()"></p-checkbox>
 
   <div #scrollable class="scrollable">
 
@@ -40,16 +40,16 @@
           <path d="m55.806 55.806 88.388 88.388" fill="none" stroke="#fff" stroke-width="20"/>
         </svg>
       </div>
-      
+
       <div style="width: 100%;">
         <div class="title-line">
           <b>{{item.name}}</b>
           <div *ngIf="isReal(item.thumbnail) && item.ownedByMe" class="like-widget">
-            <button pButton type="button" class="p-button-danger" icon="pi pi-trash" (click)="deleteBlueprint(item)" pTooltip="Delete this blueprint"></button>
+            <button pButton type="button" class="p-button-danger" icon="pi pi-trash" (click)="deleteBlueprint(item)" i18n-pTooltip pTooltip="Delete this blueprint"></button>
             <!--
             <app-like-widget
-              [blueprintId]="item.id" 
-              [nbLikes]="item.nbLikes" 
+              [blueprintId]="item.id"
+              [nbLikes]="item.nbLikes"
               [likedByMe]="item.likedByMe"
               [disabled]="!authService.isLoggedIn() || item.thumbnail == 'svg'">
             </app-like-widget>
@@ -57,16 +57,13 @@
           </div>
         </div>
         <br>
-        
-        <div *ngIf="isReal(item.thumbnail)">Author :&nbsp;<a [routerLink]="" (click)="filterOwner(item.ownerId, item.ownerName)">{{item.ownerName}}</a></div>
-        <div *ngIf="isReal(item.thumbnail)">Created : {{this.datepipe.transform(item.createdAt, 'yyyy-MM-dd')}}</div>
-        <div *ngIf="isReal(item.thumbnail)">Modified : {{this.datepipe.transform(item.modifiedAt, 'yyyy-MM-dd')}}</div>
 
-        
-        
+        <div *ngIf="isReal(item.thumbnail)" i18n>Author :&nbsp;<a [routerLink]="" (click)="filterOwner(item.ownerId, item.ownerName)">{{item.ownerName}}</a></div>
+        <div *ngIf="isReal(item.thumbnail)" i18n>Created : {{this.datepipe.transform(item.createdAt, 'yyyy-MM-dd')}}</div>
+        <div *ngIf="isReal(item.thumbnail)" i18n>Modified : {{this.datepipe.transform(item.modifiedAt, 'yyyy-MM-dd')}}</div>
       </div>
     </div>
-    
+
   </div>
 
 </p-dialog>

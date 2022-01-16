@@ -15,28 +15,30 @@ export class DialogShareUrlComponent implements OnInit {
     public blueprintService: BlueprintService,
     private messageService: MessageService) { }
 
-  get url() { return this.blueprintService.id != null ? 
-    BlueprintService.baseUrl + 'b/' + this.blueprintService.id : ''
+  get url() {
+    return this.blueprintService.id != null ?
+      BlueprintService.baseUrl + 'b/' + this.blueprintService.id : ''
   }
 
   ngOnInit() {
   }
 
-  showDialog()
-  {
+  showDialog() {
     this.visible = true;
   }
 
-  hideDialog()
-  {
+  hideDialog() {
     this.visible = false;
   }
 
-  copyToClipboard(inputElement)
-  {
+  copyToClipboard(inputElement) {
     inputElement.select();
     document.execCommand('copy');
-    this.messageService.add({severity:'success', summary:'Shareable url copied' , detail:'Paste it into a new tab to try it!'});
+    this.messageService.add({
+      severity: 'success',
+      summary: $localize`Shareable url copied`,
+      detail: $localize`Paste it into a new tab to try it!`
+    });
     this.hideDialog();
   }
 

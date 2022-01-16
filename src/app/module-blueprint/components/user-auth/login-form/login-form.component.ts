@@ -3,7 +3,7 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { HttpClient } from '@angular/common/http';
 import { AuthenticationService } from '../../../services/authentification-service';
 import { MessageService } from 'primeng/api';
-import { ReCaptchaV3Service } from 'ng-recaptcha';  
+import { ReCaptchaV3Service } from 'ng-recaptcha';
 import { Observable, Subscription } from 'rxjs';
 import { UsernameValidationDirective } from 'src/app/module-blueprint/directives/username-validation.directive';
 
@@ -23,7 +23,7 @@ export class LoginFormComponent implements OnInit {
   @Output() onLoginOk = new EventEmitter();
 
   constructor(
-    private authService: AuthenticationService, 
+    private authService: AuthenticationService,
     private recaptchaV3Service: ReCaptchaV3Service,
     private messageService: MessageService) { }
 
@@ -51,16 +51,16 @@ export class LoginFormComponent implements OnInit {
 
       let tokenPayload = {
         'g-recaptcha-response': token,
-        email: '',  
+        email: '',
         username: this.loginForm.value.username as string,
-        password: this.loginForm.value.password as string  
+        password: this.loginForm.value.password as string
       }
-      
+
       this.authService.login(tokenPayload).subscribe({
         next: this.handleSaveNext.bind(this),
         error: this.handleSaveError.bind(this)
       });
-      
+
       this.subscription.unsubscribe();
 
     });
@@ -70,8 +70,9 @@ export class LoginFormComponent implements OnInit {
   {
     this.onLoginOk.emit();
 
-    let summary: string = 'Login Successful';
-    let detail: string = 'Welcome ' + this.authService.getUserDetails().username;
+    const username = this.authService.getUserDetails().username
+    let summary: string = $localize`Login Successful`;
+    let detail: string = $localize`Welcome ${username}`;
 
     this.messageService.add({severity:'success', summary:summary , detail:detail});
     this.working = false;

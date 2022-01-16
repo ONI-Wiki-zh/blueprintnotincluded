@@ -8,6 +8,8 @@ import { timingSafeEqual } from 'crypto';
 import { timer, Subject } from 'rxjs';
 import { switchMap, debounceTime, distinctUntilChanged } from 'rxjs/operators';
 
+const LOADING_STR = $localize`Loading...`
+
 @Component({
   selector: 'app-dialog-browse',
   templateUrl: './dialog-browse.component.html',
@@ -28,7 +30,7 @@ export class DialogBrowseComponent implements OnInit {
   filterUserName: string;
   remaining: number;
 
-  
+
   filterUser: boolean;
   getDuplicates: boolean;
   filterNameSubject = new Subject<string>();
@@ -38,16 +40,16 @@ export class DialogBrowseComponent implements OnInit {
   nothingBlueprintItem: BlueprintListItem
 
   constructor(
-    private blueprintService: BlueprintService, 
+    private blueprintService: BlueprintService,
     public authService: AuthenticationService,
-    public datepipe: DatePipe) { 
+    public datepipe: DatePipe) {
 
     let tempDate = new Date();
     this.loadingBlueprintItem = {
       id: null,
-      name: 'Loading...',
+      name: LOADING_STR,
       ownerId: '',
-      ownerName: 'Loading...',
+      ownerName: LOADING_STR,
       createdAt: tempDate,
       modifiedAt: tempDate,
       thumbnail: 'svg',
@@ -59,9 +61,9 @@ export class DialogBrowseComponent implements OnInit {
 
     this.nothingBlueprintItem = {
       id: null,
-      name: 'No Results',
+      name: $localize`:nothingBlueprintItem.name:No Results`,
       ownerId: '',
-      ownerName: 'Loading...',
+      ownerName: LOADING_STR,
       createdAt: tempDate,
       modifiedAt: tempDate,
       thumbnail: 'svg_nothing',
@@ -81,7 +83,7 @@ export class DialogBrowseComponent implements OnInit {
     this.filterNameSubject.subscribe(value => {
       this.removeAll();
     });
-    
+
   }
 
   isReal(thumbnail: string): boolean {
@@ -118,7 +120,7 @@ export class DialogBrowseComponent implements OnInit {
     this.oldestDate = new Date();
     this.getBlueprints();
   }
-  
+
   // This is used by links
   filterOwner(id: string, name: string) {
     this.filterUser = true;
@@ -130,7 +132,7 @@ export class DialogBrowseComponent implements OnInit {
 
   getBlueprints() {
     let filterName = null;
-    if (this.filterName != '' && this.filterName != null) filterName = this.filterName; 
+    if (this.filterName != '' && this.filterName != null) filterName = this.filterName;
 
     this.blueprintService.getBlueprints(this.oldestDate, this.filterUserId, filterName, this.getDuplicates).subscribe({
       next: this.handleGetBlueprints.bind(this)
@@ -157,13 +159,13 @@ export class DialogBrowseComponent implements OnInit {
 
 
   reset() {
-    
+
     this.filterUser = false;
     this.filterUserId = null;
     this.filterUserName = null;
     this.getDuplicates = false;
     this.filterName = null;
-    
+
     this.removeAll();
   }
 
@@ -224,14 +226,14 @@ export class DialogBrowseComponent implements OnInit {
     this.remaining = blueprintListResponse.remaining;
 
     if (this.remaining == 0) this.noMoreBlueprints = true;
-      
+
     this.blueprintListItems = this.blueprintListItems.filter((i) => { return i != this.loadingBlueprintItem; });
 
     blueprintListResponse.blueprints.map((item) => { this.blueprintListItems.push(item); });
-    
+
     if (this.blueprintListItems.length == 0) this.blueprintListItems.push(this.nothingBlueprintItem);
   }
-  
+
   loadMoreBlueprints() {
     this.working = true;
     this.appendTemp();

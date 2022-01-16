@@ -25,10 +25,10 @@ export class RegisterFormComponent implements OnInit {
 
   @Output() onRegistrationOk = new EventEmitter();
 
-  constructor(private authService: AuthenticationService, 
-    private checkDuplicateService: CheckDuplicateService, 
+  constructor(private authService: AuthenticationService,
+    private checkDuplicateService: CheckDuplicateService,
     private messageService: MessageService,
-    private recaptchaV3Service: ReCaptchaV3Service) { 
+    private recaptchaV3Service: ReCaptchaV3Service) {
   }
 
   get f() { return this.registerForm.controls; }
@@ -46,7 +46,7 @@ export class RegisterFormComponent implements OnInit {
     this.registerForm.reset();
   }
 
-  passwordConfirming(c: AbstractControl): { invalid: boolean } 
+  passwordConfirming(c: AbstractControl): { invalid: boolean }
   {
     if (c.get('password').value !== c.get('confirmPassword').value) return {invalid: true};
   }
@@ -61,7 +61,7 @@ export class RegisterFormComponent implements OnInit {
         'g-recaptcha-response': token,
         email: this.registerForm.value.email as string,
         username: this.registerForm.value.username as string,
-        password: this.registerForm.value.password as string  
+        password: this.registerForm.value.password as string
       }
 
       this.authService.register(tokenPayload).subscribe({
@@ -78,9 +78,10 @@ export class RegisterFormComponent implements OnInit {
     else if (data.token)
     {
       this.onRegistrationOk.emit();
-      let summary: string = 'Registration Successful';
-      let detail: string = 'Welcome ' + this.authService.getUserDetails().username;
 
+      const username = this.authService.getUserDetails().username
+      let summary: string = $localize`Registration Successful`;
+      let detail: string = $localize`Welcome ${username}`;
       this.messageService.add({severity:'success', summary:summary , detail:detail});
     }
 

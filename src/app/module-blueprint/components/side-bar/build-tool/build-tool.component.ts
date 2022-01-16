@@ -29,7 +29,7 @@ export class ComponentSideBuildToolComponent implements OnInit, IObsBuildItemCha
   @ViewChild('categoryPanel') categoryPanel: OverlayPanel;
   @ViewChildren(OverlayPanel) itemPanels !: QueryList<OverlayPanel>;
 
-  constructor(public toolService: ToolService) 
+  constructor(public toolService: ToolService)
   {
     this.items = [];
     this.toolService.buildTool.subscribeBuildItemChanged(this);
@@ -73,10 +73,10 @@ export class ComponentSideBuildToolComponent implements OnInit, IObsBuildItemCha
 
   showItems(event: any, buildMenuCategory: BuildMenuCategory, indexCategory) {
 
-    
+
 
     this.items[indexCategory] = [];
-    
+
     let lineIndex = 0;
     let itemIndex = 0;
 
@@ -84,7 +84,11 @@ export class ComponentSideBuildToolComponent implements OnInit, IObsBuildItemCha
       if (buildMenuCategory.category == buildMenuItem.category) {
         let oniItem = OniItem.getOniItem(buildMenuItem.buildingId);
         if (this.items[indexCategory][lineIndex] == null) this.items[indexCategory].push([]);
-
+        const specialItemName = {
+          Element: $localize`:special item:Element`,
+          Info: $localize`:special item:Info`,
+        }
+        if (specialItemName[oniItem.id]) oniItem.name = specialItemName[oniItem.id]
         this.items[indexCategory][lineIndex].push(oniItem);
         itemIndex++;
 
@@ -95,7 +99,7 @@ export class ComponentSideBuildToolComponent implements OnInit, IObsBuildItemCha
       }
 
     let currentIndex = 0;
-    this.itemPanels.forEach((itemPanel) => { 
+    this.itemPanels.forEach((itemPanel) => {
       if (itemPanel != this.itemPanels.last) {
         if (currentIndex != indexCategory) itemPanel.hide();
         else {
@@ -103,7 +107,7 @@ export class ComponentSideBuildToolComponent implements OnInit, IObsBuildItemCha
           else itemPanel.show(event);
         }
       }
-      
+
       currentIndex++
     })
 

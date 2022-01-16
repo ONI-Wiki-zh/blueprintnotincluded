@@ -16,13 +16,13 @@ export class ThresholdSwhitchScreenComponent implements OnInit {
 
   get correctedMaxRange() {
     if (this.blueprintItem.id=='LogicPressureSensorGas') return this.thresholdSwitchSideScreen.rangeMax *1000;
-    else if (this.thresholdSwitchSideScreen.thresholdValueUnits==' ºC') return 1000; 
+    else if (this.thresholdSwitchSideScreen.thresholdValueUnits==' ºC') return 1000;
     else return this.thresholdSwitchSideScreen.rangeMax;
   }
 
   get correctedStep() {
-    if (this.thresholdSwitchSideScreen.thresholdValueUnits==' ºC') return 0.1; 
-    else return this.thresholdSwitchSideScreen.incrementScale; 
+    if (this.thresholdSwitchSideScreen.thresholdValueUnits==' ºC') return 0.1;
+    else return this.thresholdSwitchSideScreen.incrementScale;
   }
 
   get correctedUnit() {
@@ -46,10 +46,10 @@ export class ThresholdSwhitchScreenComponent implements OnInit {
   }
 
   get tooltip() {
-    let html = this.above ? this.thresholdSwitchSideScreen.aboveToolTip : this.thresholdSwitchSideScreen.belowToolTip;  
+    let html = this.above ? this.thresholdSwitchSideScreen.aboveToolTip : this.thresholdSwitchSideScreen.belowToolTip;
 
     html = html.replace('{0}', this.valueWithUnit);
-    
+
     return html;
   }
 

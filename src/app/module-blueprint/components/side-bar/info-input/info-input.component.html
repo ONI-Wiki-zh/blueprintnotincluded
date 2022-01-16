@@ -7,7 +7,7 @@
   <p-colorPicker [(ngModel)]="frontColor" [appendTo]="'body'" (onChange)="colorChange()"></p-colorPicker>
 </div>
 
-<input class="info-title" type="text" placeholder="Title" pInputText [(ngModel)]="title"/>
+<input class="info-title" type="text" i18n-placeholder placeholder="Title" pInputText [(ngModel)]="title"/>
 <textarea class="info-text-area" rows="5" pInputTextarea autoResize="true" [(ngModel)]="infoString"></textarea>
 
 <p-overlayPanel #iconPanel [appendTo]="'body'">

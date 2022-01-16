@@ -1,21 +1,21 @@
-<p-dialog #exportImagesDialog 
-  header='Export options' 
+<p-dialog #exportImagesDialog
+  i18n-header header='Export options'
   [(visible)]="visible"
-  [modal]="true" 
+  [modal]="true"
   [dismissableMask]="true"
-  [closable]="true" 
-  [focusOnShow]="false" 
-  [maximizable]="false" 
-  [draggable]="false" 
-  [resizable]="false" 
+  [closable]="true"
+  [focusOnShow]="false"
+  [maximizable]="false"
+  [draggable]="false"
+  [resizable]="false"
   >
   <div class="grid">
     <div class="one">
-        <p-checkbox binary="true" label="Export with grid lines"  [(ngModel)]="exportOptions.gridLines"></p-checkbox><br><br>
+        <p-checkbox binary="true" i18n-label label="Export with grid lines"  [(ngModel)]="exportOptions.gridLines"></p-checkbox><br><br>
         <p-dropdown [options]="pixelPerTile" [(ngModel)]="exportOptions.pixelsPerTile" [style]="{width: '15em'}"></p-dropdown><br>
-        Image size: {{finalSize}}
+        <ng-container i18n>Image size: {{finalSize}}</ng-container>
         <br>
-        About {{finalSizeMb | number:'1.2-2'}}Mb
+        <ng-container i18n>About {{finalSizeMb | number:'1.2-2'}}Mb</ng-container>
     </div>
     <div class="three">
         <div>
@@ -35,7 +35,7 @@
   </div>
 
   <p-footer>
-    <p-button label="Download images" [disabled]="disabled" (click)="downloadImages()"></p-button>
+    <p-button i18n-label label="Download images" [disabled]="disabled" (click)="downloadImages()"></p-button>
   </p-footer>
 
 </p-dialog>
